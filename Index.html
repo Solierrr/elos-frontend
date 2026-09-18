@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de login</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/text.css">
     <link rel="stylesheet" href="../css/variables.css">
@@ -17,23 +13,20 @@
 </head>
 <body>
     <header>
-        <img src="asset/icone/Logo.svg" alt="Logo Elos" width="60", height="60">
-        <p class="subTitle">Elos</p>
+        <img src="asset/icone/Frame 188.svg" alt="logo-elos" width="146", height="60">
     </header>
-        <div class="FundoLaranja">
-            <div class="TelaDoLogin">
-                <p class="InsaraDados">Insira os dados!</p>
+    <div class="container">
+            <div class="tela-login">
+                <p class="subTitle">Insira os dados!</p>
                 <p class="">Olá, você por ai denovo?</p>
                 <form action="/enviar" method="POST">
-                    <input placeholder="Coloque o seu e-mail aqui" class="QuadradosLogin">
-                    <input placeholder="Coloque sua senha" class="QuadradosLogin">
+                    <input type="email" placeholder="Coloque o seu e-mail aqui">
+                    <input type="password" placeholder="Coloque sua senha" class="">
                     <p class="EsqueceuSenha">Esqueceu a senha?</p>
-                    <button type="submit" class="BotaoLogin">Logar</button>
+                    <button type="submit">Logar</button>
                     <p class="">Nao tem conta? Fazer cadastro</p>
                 </form>
             </div>
-        </div>
-    </div>                                                         
-    <div class="FundoBranco"></div>
+            </div>
 </body>
 </html>
