@@ -13,20 +13,28 @@
 </head>
 <body>
     <header>
-        <img src="asset/icone/Frame 188.svg" alt="logo-elos" width="146", height="60">
+        <img src="asset/icone/Frame 188.svg" alt="logo-elos" width="146" height="60">
     </header>
     <div class="container">
             <div class="tela-login">
                 <p class="subTitle">Insira os dados!</p>
-                <p class="">Olá, você por ai denovo?</p>
+                <p class="title">Olá, você por ai denovo?</p>
                 <form action="/enviar" method="POST">
-                    <input type="email" placeholder="Coloque o seu e-mail aqui">
-                    <input type="password" placeholder="Coloque sua senha" class="">
-                    <p class="EsqueceuSenha">Esqueceu a senha?</p>
-                    <button type="submit">Logar</button>
-                    <p class="">Nao tem conta? Fazer cadastro</p>
+                    <div class="form-group">
+                        <input class="text-input" type="email" placeholder="Coloque o seu e-mail aqui">
+                        <input class="text-input" type="password" placeholder="Coloque sua senha">
+                    </div>
+                    <div class="direction"> 
+                        <p class="little-title">Esqueceu a senha?</p>
+                    </div>
+                    <div class="button-text-group">
+                        <button class="subTitle" type="submit">Logar</button>
+                        <p class="little-title">
+                            <span class="color">Não tem conta?</span> 
+                            <span class="link-cadastro">Fazer cadastro</span> 
+                        </p>
+                    </div>
                 </form>
-            </div>
             </div>
 </body>
 </html>
