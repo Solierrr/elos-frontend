@@ -1,0 +1,119 @@
+@import url('variables.css');
+
+#logo {
+    box-sizing: border-box;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    align-content: center;
+    justify-content: center;
+}
+
+
+
+aside>img, a{
+    box-sizing: border-box;
+
+    width: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+.conteiner {
+    display: flex;
+    align-items: flex-start;
+
+    width: 100%;
+}
+
+#sideBar {
+    background-color: var(--black);
+
+    width: 8.5%;
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+
+    position: fixed;
+    top:0;
+}
+
+#conteinerDoConteudo{
+    flex: 1;
+
+    width: 91.5%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#tituloTabela{
+    box-sizing: border-box;
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#caixaTabela{
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-x: auto;
+
+    width: 80%;
+    height: 90%;
+}
+
+table {
+    border-radius: 15px;
+    border-style: none;
+    overflow: hidden;
+    overflow-x: hidden;
+
+    width: 100%;
+}
+
+th {
+    border: none;              
+    border-collapse: collapse;
+    
+    height: 3.2rem;
+
+    background-color: var(--orange);
+    color: var(--white);
+
+    align-items: center;
+}
+
+
+td {
+    height: 3.125rem;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--white);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--grey);
+}
+
+#conteinerBotoes {
+    width: 100%;
+    height: 2%;
+    
+    display: flex;
+    flex-direction: row;
+
+}
