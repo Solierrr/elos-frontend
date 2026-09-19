@@ -6,17 +6,17 @@
     word-spacing: 0;
 }
 
-.tittle{
-    font-size: 2rem;
+.title{
+    font-size: 5rem;
     font-weight: 600;
 }
 
-.subTittle{
+.subTitle{
     font-size: 1.6rem;
     font-weight: 500;
 }
 
-.littleTittle{
+.little-title{
     font-size: 1.4rem;
     font-weight: 400;
 }
