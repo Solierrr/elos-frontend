@@ -7,7 +7,7 @@
     word-spacing: 0;
 }
 
-.bigText{
+.big_text{
     font-size: 3rem;
     font-weight: 650;
     letter-spacing: -0.1rem;
@@ -18,12 +18,12 @@
     font-weight: 600;
 }
 
-.subTitle{
+.sub_title{
     font-size: 1.6rem;
     font-weight: 500;
 }
 
-.littleTitle{
+.little_title{
     font-size: 1.4rem;
     font-weight: 350;
 }
@@ -34,7 +34,7 @@
 }
 
 
-.littleText{
+.little_text{
     font-size: 1rem;
     font-weight: 300;
 }
