@@ -1,40 +1,43 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de login</title>
-    
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/text.css">
-    <link rel="stylesheet" href="../css/variables.css">
-    <link rel="stylesheet" href="../css/TelaLogin/login.css">
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tela de login</title>
+        
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/text.css">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/TelaLogin/login.css">
 
-</head>
-<body>
-    <header>
-        <img src="asset/icone/Frame 188.svg" alt="logo-elos" width="146" height="60">
-    </header>
-    <div class="container">
-            <div class="tela-login">
-                <p class="subTitle">Insira os dados!</p>
-                <p class="title">Olá, você por ai denovo?</p>
-                <form action="/enviar" method="POST">
-                    <div class="form-group">
-                        <input class="text-input" type="email" placeholder="Coloque o seu e-mail aqui">
-                        <input class="text-input" type="password" placeholder="Coloque sua senha">
-                    </div>
-                    <div class="direction"> 
-                        <p class="little-title" style="text-decoration: underline;">Esqueceu a senha?</p>
-                    </div>
-                    <div class="button-text-group">
-                        <button class="subTitle" type="submit">Logar</button>
-                        <p class="little-title">
-                            <span class="color">Não tem conta?</span> 
-                            <span class="link-cadastro">Fazer cadastro</span> 
+    </head>
+    <body>
+        <div class = "containerP">
+            <header>
+                <img src="asset/icone/Frame 188.svg" alt="logo-elos" width="146" height="60">
+            </header>
+            <div class="container">
+                <div class="tela-login">
+                    <p class="subTitle">Bem vindo de volta!</p>
+                    <p class="title">Acesse a sua conta</p>
+                    <form action="/enviar" method="POST">
+                        <div class="form-group">
+                            <input class="text-input" type="email" placeholder="Coloque o seu e-mail aqui">
+                            <input class="text-input" type="password" placeholder="Coloque sua senha">
+                        </div>
+                        <div class="direction"> 
+                            <p class="little-title" style="text-decoration: underline;">Esqueceu a senha?</p>
+                        </div>
+                        <div class="button-text-group">
+                            <button class="subTitle" type="submit">Logar</button>
+                            <p class="little-title">
+                                <span class="color">Não tem conta?</span> 
+                                <span class="link-cadastro">Fazer cadastro</span> 
+                            </form>
                         </p>
                     </div>
-                </form>
-            </div>
-</body>
-</html>
+                </div>
+            </div>  
+        </div>
+    </body>
+    </html>
