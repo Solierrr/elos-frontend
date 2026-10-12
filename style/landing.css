@@ -181,7 +181,7 @@ border-radius: 1rem;
     text-align: center;
     line-height: 1.4;
 }
-.frase_Hero .big_text{
+.frase_hero .big_text{
     color: var(--white);
     text-align: center;
     line-height: 1;
@@ -230,13 +230,16 @@ border-radius: 1rem;
 }
 
 #secao1{
-    margin: 0 8rem 0 8rem;
+    margin: 0 8rem;
+    align-items: center;
+    justify-content: center;
 }
 /*Carrossel seção 1*/
-.carrossel_S1{
-    margin: 8;
+.carrosselS1{
+    width: 100%;
+    max-width: 100%;
     display: flex;
-    gap: 3.7rem;
+    gap: 3.5rem;
     overflow-x: auto;
 }
 
@@ -282,5 +285,30 @@ border-radius: 1rem;
 }
 .infos_O .text{
     color: rgba(0,0,0,0.6);
-    padding: 0 6rem 0 6rem;
+    padding: 0 5rem 0 5rem;
+}
+
+#secao1 .passagem{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+
+}
+#secao1 .passagem .quadrado1{
+    width: 3.8rem;
+    height: 1rem;
+    background-color: var(--orange);
+    border-radius: 0.25rem;
+    border: none;
+}
+#secao1 .passagem .quadrado2{
+    width: 3.8rem;
+    height: 1rem;
+    border-radius: 0.25rem;
+    border: none;
+  background-color: color-mix(in srgb, var(--black) 50%, transparent);
+
 }
