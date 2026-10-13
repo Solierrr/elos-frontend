@@ -669,30 +669,3 @@ option{
     width: 70%;
     aspect-ratio: 1/1;
 }
-
-
-
-
-/* @media(max-width: 767px){
-    .side-bar {
-        width: 14.5%;
-    }  
-
-    #conteiner-botoes {
-        height: 6%;
-
-        padding-bottom: 0.5%;
-        padding-left: 10% ;
-    }
-
-    .botoes-pop-up{
-        padding: 0 5%;
-    }
-
-    #caixa-tabela{
-        width: 80%;
-        height: 84%;
-    }
-
-
-} */

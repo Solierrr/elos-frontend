@@ -38,9 +38,8 @@ formularioInsert.addEventListener('submit', (event) =>{
 
     const todosInputs = formularioInsert.querySelectorAll('input, select, textarea');
     todosInputs.forEach(input => {
-        input.classList.remove('span-erro'); // Remove a classe de erro se existir
+        input.classList.remove('caixa-erro'); 
         
-        // Se você colocou span com texto de erro embaixo, pode limpá-lo também:
         const spanErro = formularioInsert.querySelector(`#erro-${input.name}`);
         if (spanErro){ spanErro.textContent = '';}
     });
@@ -183,4 +182,140 @@ const recriarOptionNoSelect = (chave) => {
     }else{
         campoFiltro.appendChild(novaOption);
     }
+};
+
+const popUpFiltro = document.getElementById("pop-up-filtro");
+
+formularioFiltro.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const todosInputs = formularioFiltro.querySelectorAll('input, select, textarea');
+    todosInputs.forEach(input => {
+        input.classList.remove('caixa-erro');
+
+        const spanErro = formularioFiltro.querySelector(`#filtro-erro-${input.name}`);
+        if (spanErro) { spanErro.textContent = ''; }
+    });
+
+    const dadosFormulario = new FormData(formularioFiltro);
+
+    const objetoJs = Object.fromEntries(dadosFormulario);
+    const dadosJSON = JSON.stringify(objetoJs);
+
+    fetch('/crudUsuario', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: dadosJSON
+    })
+    .then(respostaServlet => {
+        return respostaServlet.text().then(texto => {
+            return {
+                ok: respostaServlet.ok,
+                estaVazio: texto.trim() === '',
+                texto: texto
+            };
+        });
+    })
+    .then(resultado => {
+        if (resultado.ok && resultado.estaVazio) {
+            popUpFiltro.close();
+            return;
+        }
+
+        if (resultado.estaVazio) { return; }
+
+        const dadosResposta = JSON.parse(resultado.texto);
+
+        if (Array.isArray(dadosResposta.valores)) {
+            // Resposta de sucesso com dados para a tabela
+            preencherTabela(dadosResposta.valores);
+        } else {
+            // Resposta de erro: { nome-campo: msg, ... }
+            preencherErros(dadosResposta);
+        }
+    })
+    .catch(erro => {
+        console.error('Erro ao processar requisição:', erro);
+    });
+});
+
+// Preenche os spans de erro de cada campo do formulário
+const preencherErros = (errosNoServlet) => {
+    Object.entries(errosNoServlet).forEach(([nomeDoCampo, mensagemDeErro]) => {
+        const inputDoForm = formularioFiltro.querySelector(`[name="${nomeDoCampo}"]`);
+
+        if (inputDoForm) {
+            inputDoForm.classList.add('caixa-erro');
+
+            const spanErro = formularioFiltro.querySelector(`#filtro-erro-${nomeDoCampo}`);
+            if (spanErro) {
+                spanErro.textContent = mensagemDeErro;
+            }
+        }
+    });
+};
+
+// Preenche o cabeçalho e o corpo da tabela dinamicamente, 
+// a partir das chaves presentes nos objetos de "valores"
+const preencherTabela = (valores) => {
+    const tabela = document.querySelector('#caixa-tabela table');
+    const cabecalho = tabela.querySelector('thead tr');
+    const corpoTabela = tabela.querySelector('tbody');
+
+    if (!tabela || !cabecalho || !corpoTabela) return;
+
+    corpoTabela.innerHTML = '';
+    cabecalho.innerHTML = '';
+
+    if (!Array.isArray(valores) || valores.length === 0) {
+        return;
+    }
+
+    // Chaves do primeiro objeto definem as colunas
+    const chaves = Object.keys(valores[0]);
+
+    // Monta o cabeçalho
+    chaves.forEach(chave => {
+        const th = document.createElement('th');
+        th.className = 'littleText';
+        th.textContent = formatarNomeColuna(chave);
+        cabecalho.appendChild(th);
+    });
+
+    const thAcoes = document.createElement('th');
+    thAcoes.className = 'littleText';
+    thAcoes.textContent = 'Ações';
+    cabecalho.appendChild(thAcoes);
+
+    // Monta as linhas
+    valores.forEach(item => {
+        const linha = document.createElement('tr');
+
+        chaves.forEach(chave => {
+            const td = document.createElement('td');
+            td.className = 'littleText';
+            td.textContent = item[chave] ?? '';
+            linha.appendChild(td);
+        });
+
+        const tdAcoes = document.createElement('td');
+        tdAcoes.className = 'littleText';
+        tdAcoes.innerHTML = `
+            <button type="button" class="editar-usuario" data-id="${item.id ?? ''}">Editar</button>
+            <button type="button" class="excluir-usuario" data-id="${item.id ?? ''}">Excluir</button>
+        `;
+        linha.appendChild(tdAcoes);
+
+        corpoTabela.appendChild(linha);
+    });
+};
+
+// Converte "tipoUsuario" / "tipo_usuario" em "Tipo Usuario"
+const formatarNomeColuna = (chave) => {
+    return chave
+        .replace(/_/g, ' ')
+        .replace(/([a-z])([A-Z])/g, '$1 $2')
+        .replace(/\b\w/g, letra => letra.toUpperCase());
 };

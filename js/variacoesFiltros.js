@@ -14,6 +14,7 @@ const gerarCampos = () => {
                             <img src="${urlApagar}" class="icone-lixeira">
                         </button>
                     </div>
+                    <span id="filtro-erro-id" class="span-erro"></span>
                 </div>`,
             "EMAIL": `
                 <div class="caixa-filtro label-e-input">
@@ -24,6 +25,8 @@ const gerarCampos = () => {
                             <img src="${urlApagar}" class="icone-lixeira">
                         </button>
                     </div>
+                    <span id="filtro-erro-email" class="span-erro"></span>
+
                 </div>`,
             "NOME": `
                 <div class="caixa-filtro label-e-input">
@@ -33,6 +36,8 @@ const gerarCampos = () => {
                         <button type="button" class="remover-filtro botoes-sair">
                             <img src="${urlApagar}" class="icone-lixeira">
                         </button>
+                        <span id="filtro-erro-nome" class="span-erro"></span>
+
                     </div>
                 </div>`,
             "TIPO_USUARIO":`
@@ -49,6 +54,8 @@ const gerarCampos = () => {
                             <img src="${urlApagar}" class="icone-lixeira">
                         </button>
                     </div>
+                    <span id="filtro-erro-tipo-usuario" class="span-erro"></span>
+
                 </div>`,
             "RAIO_PROCURA_KM": `
                 <div class="caixa-filtro label-e-input">
@@ -59,6 +66,8 @@ const gerarCampos = () => {
                             <img src="${urlApagar}" class="icone-lixeira">
                         </button>
                     </div>
+                    <span id="filtro-erro-raio-procura-km" class="span-erro"></span>
+
                 </div>`
         }
     };
