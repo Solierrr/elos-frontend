@@ -45,9 +45,9 @@
 /* Header personalização*/
 
 header{
-    position: relative;
+    position: fixed;
 
-    z-index: 10;
+    z-index: 30;
 
 
     width: fit-content;
@@ -161,11 +161,14 @@ text-align: center;
 
 gap: 1.5rem;
 padding: 0.7rem 0.9rem;
+backdrop-filter: blur(10px);          /* Aplica o desfoque no que está atrás */
+-webkit-backdrop-filter: blur(10px); 
 
 background-color: rgba(0, 0, 0, 0.45);
 border-radius: 1rem;
 border: 1px solid #56564a;
 }
+
 
 /*Frase do Hero*/
 
@@ -195,14 +198,13 @@ border: 1px solid #56564a;
     color: var(--white);
     text-align: center;
     line-height: 1.4;
-    font-size: clamp(1.1rem, 4vw, 1.6rem);
 }
+
 .frase_hero .big_text{
     color: var(--white);
     text-align: center;
     line-height: 1;
-    /*Deixar suave em diversos tipos de tela e não estourar*/
-    font-size: clamp(2rem, 6vw, 3rem);
+
 }
 .button_saiba{
     position: relative;
@@ -286,8 +288,9 @@ border: 1px solid #56564a;
 #secao1 .big_text{
     text-align: center;
     padding-bottom: 2rem;
-    font-size: clamp(1.75rem, 6vw, 3rem);
+    margin-top: 3rem;
 }
+
 .infos_BG, 
 .infos_D, 
 .infos_C, 
@@ -309,13 +312,14 @@ border: 1px solid #56564a;
 
 #secao1 .passagem{
     display: flex;
+    margin-top: 1.5rem;
     flex: 1;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 0.35rem;
-
 }
+
 #secao1 .passagem .quadrado1{
     width: 3.8rem;
     height: 1rem;
@@ -323,13 +327,61 @@ border: 1px solid #56564a;
     border-radius: 0.25rem;
     border: none;
 }
+
 #secao1 .passagem .quadrado2{
     width: 3.8rem;
     height: 1rem;
     border-radius: 0.25rem;
     border: none;
-  background-color: color-mix(in srgb, var(--black) 50%, transparent);
+    background-color: color-mix(in srgb, var(--black) 50%, transparent);
 
+}
+
+.frase_secao2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+
+    position: relative;
+    margin-block: auto;
+    z-index: 15;
+
+    padding-bottom: 1rem;
+    
+    text-align: center;
+}
+
+
+.accent{
+    color: var(--orange);
+}
+
+#secao2 .title{
+    color: color-mix(in srgb, var(--black) 85%, transparent);
+}
+
+#secao2 .informacao1_secao2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-inline: 1rem;
+    margin-top: 0.5rem;
+}
+
+#secao2 .instalacao{
+    background-color: var(--dark_grey);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;          
+    max-width: 40rem;     
+
+    padding: 0.6rem 1.5rem; 
+    border-radius: 0.6rem;
 }
 
 @media (min-width: 1024px) {
@@ -351,6 +403,7 @@ border: 1px solid #56564a;
 
 @media (min-width: 768px) {
   .button_saiba {
-    padding: 0.8rem 2rem;  /* volta ao tamanho do design */
+     /*para voltar ao tamanho do design */
+    padding: 0.8rem 2rem; 
   }
 }

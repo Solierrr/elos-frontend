@@ -8,34 +8,33 @@
 }
 
 .big_text{
-    font-size: 3rem;
+    font-size: clamp(2rem, 1rem + 5vw, 3.3rem);
     font-weight: 650;
-    letter-spacing: -0.1rem;
 }
 
 .title{
-    font-size: 2rem;
+    font-size: clamp(1.25rem, 1rem + 2vw, 2.2rem);
     font-weight: 600;
 }
 
 .sub_title{
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 1rem + 1.25vw, 1.6rem);
     font-weight: 500;
 }
 
 .little_title{
-    font-size: 1.4rem;
+    font-size: clamp(1rem, 1rem + 1vw, 1.4rem);
     font-weight: 350;
 }
 
 .text{
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1rem + 0.8vw, 1.2rem);
     font-weight: 350;
 }
 
 
 .little_text{
-    font-size: 1rem;
+    font-size: clamp(100rem, 1rem + 0.5vw, 1rem);
     font-weight: 300;
 }
 
