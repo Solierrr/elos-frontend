@@ -5,7 +5,7 @@ body{
 }
 
 /* Hero personalização*/
-.hero{
+#hero{
     background-image: url("../assets/img/imgHeroAboutUs.jpg");
     background-size: cover;
     height: 100vh;
@@ -21,7 +21,7 @@ body{
     padding-left: 8rem;
 }
 
-.hero::before{
+#hero::before{
     content: '';
     background: linear-gradient(
         to top,
@@ -301,12 +301,172 @@ ul{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 
     margin-top: 11rem;
 
     height: 57.875rem;
 
     background-color: var(--beige);
+}
+
+    /* interruptor secao 3------------- */
+.interruptor{
+    width: 7rem;
+    height: 3rem;
+    padding: 5px;
+
+    border: 0.4rem solid var(--grey);
+    border-radius: 2rem;
+    background-color: var(--white);
+
+    cursor: pointer;
+}
+
+.interruptor-bolinha {
+    display: block;
+    width: 3rem;
+    height: 2.4rem;
+    margin-top: -5px;
+    margin-left: -5px;
+    border-radius: 24.79px;
+    background-color: var(--orange);
+    border-radius: 2.49rem;
+    outline: 0.35rem solid var(--grey);
+    transition: transform 0.2s ease;
+}
+
+.interruptor.anual .interruptor-bolinha {
+    transform: translateX(32px);
+}
+
+    /* botões planos secao 3------------- */
+.botoes-planos {
+    display: flex;
+    width: min(800px, 100%);
+    min-height: 5.5rem;
+    overflow: hidden;
+    border-radius: 50px;
+    background-color: #ebebeb;
+}
+
+.botao-plano {
+    padding: 1rem 4rem;
+    border: 0;
+    border-right: 1px solid var(--black);
+    background: transparent;
+    color: var(--black);
+    font: inherit;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-weight: 300;
+}
+
+.botao-plano:last-child {
+    border-right: 0;
+}
+
+.botao-plano.ativo {
+    background-color: var(--white);
+    font-weight: 500;
+}
+
+.botao-plano:focus-visible,
+.interruptor:focus-visible {
+    outline: 2px solid #000;
+}
+
+    /* card secao 3------------- */
+
+.card-plano {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 2rem;
+    margin-top: 5rem;
+    border: 5px solid var(--grey);
+    border-radius: 30px;
+    background-color: var(--white);
+}
+
+.coluna-principal {
+    padding-right: 2.2rem;
+    border-right: 3px solid var(--grey);
+}
+
+.coluna-principal p {
+    text-align: center;
+    margin: 0.4rem;
+}
+
+#lista-beneficios, #lista-adicionais {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+#listaBeneficios li {
+    position: relative;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    line-height: 1.4;
+}
+
+#listaBeneficios li::before {
+    position: absolute;
+    left: 0;
+    content: url("../assets/icone/ul_checked.svg");
+}
+
+#listaBeneficios li.nao-incluido::before {
+    content: url("../assets/icone/ul_unchecked.svg");
+}
+
+#lista-faixas li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.observacao {
+    margin-top: 2rem;
+}
+
+@media (max-width: 700px) {
+    .controles {
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    .botoes-planos {
+        min-height: 4rem;
+    }
+
+    .botao-plano {
+        padding: 1rem 0.4rem;
+        font-size: 14px;
+    }
+
+    .card-plano {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem 1.2rem;
+    }
+
+    .coluna-principal {
+        padding-right: 0;
+        padding-bottom: 1.5rem;
+        border-right: 0;
+        border-bottom: 3px solid #ededed;
+    }
+
+    .coluna-principal h2 {
+        margin-top: 0;
+    }
+
+    .coluna-adicionais h3 {
+        font-size: 1.2rem;
+    }
 }
 
 /* Seção 4 -----------------------------------*/
@@ -330,7 +490,7 @@ ul{
     display: flex;
     flex-direction: column;
     
-    padding: 10% 12%;
+    padding: 10% 10%;
 
     width: 18.75rem;
     height: 12.5rem;
@@ -343,8 +503,7 @@ ul{
     text-align: center;
 }
 
-.medium-texto{
-    font-size: 18px;
+.medium{
     font-weight: 500;
 }
 
@@ -401,9 +560,17 @@ ul{
 
 #footer{
     display: flex;
-    padding-top: 4rem;
+    justify-content: center;
 
     height: 12rem;
+
+    padding-top: 2rem;
+}
+
+#grid-footer{
+    margin-top: 0;
+    margin-left: 6rem;
+    gap: 6rem;
 }
 
 #logo-footer{
@@ -414,4 +581,32 @@ ul{
 #logo-footer .subTittle{
     padding-left: 0.5rem;
     color: var(--orange);
+}
+
+#slogan-footer{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+#instagram::before{
+    content: url('../assets/icone/instagram.svg');
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 1rem;
+    vertical-align: sub;
+    color: black;
+}
+
+#gmail::before{
+    content: url('../assets/icone/gmail.svg');
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 1rem;
+    vertical-align: sub;
+    color: black;
 }

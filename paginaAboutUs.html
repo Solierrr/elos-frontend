@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <div class = "hero">
+    <div id = "hero">
         <header>
             <div class="header-container">
                 <div class="logo">
@@ -21,8 +21,8 @@
                 </div>
                 <div class = "divisor"></div>
                 <nav class="navigation">
-                     <a href="#" class = "text">Inicio</a>
-                    <a href="#" class = "text">Sobre nós</a>
+                     <a href="index.html" class = "text">Inicio</a>
+                    <a href="#secao1" class = "text">Sobre nós</a>
                 </nav>
                 <div class = "Pesquisa">
                     <img src="assets/icone/lupa.svg" alt="ícone de Lupa" class="lupa">
@@ -55,7 +55,7 @@
             <div>
                 <p class="bigText">Afinal, qual é o <br>nosso <span class="highlightText">objetivo?</span></p>
                 <br>
-                <p class="littleTittle">Nosso objetivo é <b>facilitar a <span class=highlightText>conexão</span></b> entre os polos de  atuação do setor solar, centralizando os três frontes fornecedor, profissional e cliente <b>em um só lugar.</b>
+                <p class="littleTittle">Nosso objetivo é <b>facilitar a <span class=highlightText>conexão</span></b> entre os polos de  atuação do setor solar, centralizando o setor solar <b>em um só lugar.</b>
                 <br><br>
                 Nosso serviço não se enquadra para clientes e fornecedores como pessoas fisicas.</p>
             </div>
@@ -131,24 +131,103 @@
     </section>
 
     <section id="secao3">
-        <div>
-            <p class="bigText  secoes-title">Conheça nossos <span class="highlightText">planos</span></p>
+        
+        <p class="bigText  secoes-title">Conheça nossos <span class="highlightText">planos</span></p>
 
-            <div id="botoes-planos">
+        <div class="botoes-secao3">
 
-                <div id="botao-switch-planos">
-                    
-                </div>
+            <div class="button-mensalidade">
+                <button
+                    id="alternarPeriodo"
+                    class="interruptor"
+                    type="button"
+                    aria-pressed="false">
+                    <span class="interruptor-bolinha"></span>
+                </button>
 
-                <div id="botao-clientes-planos">
-
-                </div>
+                <span id="texto-mensalidade">Mensal</span>
             </div>
 
-            <div class="planos">
+            <div class="botoes-planos">
+                <button class="botao-plano subTittle ativo"
+                        type="button"
+                        data-plano="fornecedor"
+                        aria-pressed="true">
+                    Fornecedor
+                </button>
 
+                <button class="botao-plano subTittle"
+                        type="button"
+                        data-plano="profissional"
+                        aria-pressed="false">
+                    Profissional
+                </button>
+
+                <button class="botao-plano subTittle"
+                        type="button"
+                        data-plano="cliente"
+                        aria-pressed="false">
+                    Cliente
+                </button>
             </div>
+
         </div>
+
+        <article class="card-plano">
+
+            <div id="card-profissional" class="cards-profissionais" hidden>
+
+                <div class="plano-profissional">
+                    <p class="tittle">Elos Campo</p>
+                    <p class="text">A partir de:</p>
+                    <p class="bigText highlightText" id="precoCampo">R$ 29,00</p>
+                    <p class="medium text highlightText" id="periodoCampo">por mês</p>
+                    <ul id="beneficiosCampo" class="littleText"></ul>
+                </div>
+
+                <div class="plano-profissional">
+                    <p class="tittle">Elos Campo+</p>
+                    <p class="text">A partir de:</p>
+                    <p class="bigText highlightText" id="precoCampoMais">R$ 59,00</p>
+                    <p class="medium text highlightText" id="periodoCampoMais">por mês</p>
+                    <ul id="beneficiosCampoMais" class="littleText"></ul>
+                </div>
+
+            </div> <!-- Card dos planos do profissional, o JS que vai ativa-lo. Está aqui porque é o unico com a estrutura diferente-->
+
+            <div id="card-normal">
+                <div class="coluna-principal">
+
+                    <p class="tittle" id="nomePlano">Elos Fornece</p>
+
+                    <p class="text">A partir de:</p>
+
+                    <p class="bigText highlightText" id="precoPlano">R$ 300,00</p>
+                    <p class="medium text highlightText" id="periodoPreco">por mês</p>
+
+                    <ul id="lista-beneficios" class="littleText">
+
+                    </ul>
+
+                </div>
+
+                <div class="coluna-faixas">
+
+                    <p class="littleTittle" id="titulo-faixas">
+                        Nosso plano conta com algumas faixas de preço extras. Até:
+                    </p>
+
+                    <ul id="lista-faixas" class="littleText">
+
+                    </ul>
+
+                    <p id="observacao-faixas" class="littleText"></p>
+
+                </div>
+            </div>
+
+        </article>
+
     </section>
 
     <section id="secao4">
@@ -158,19 +237,19 @@
             <div class="grid-container">
 
                 <div class="item-diferenciais">
-                    <p class="medium-texto">Ecossistema <span class="highlightText">Unificado</span></p>
+                    <p class="medium text">Ecossistema <span class="highlightText">Unificado</span></p>
                     <br>
                     <p class="littleText">Ambiente único para fornecedores, empresas e profissionais.</p>
                 </div>
 
                 <div class="item-diferenciais">
-                    <p class="medium-texto">Exclusividade <span class="highlightText">B2B</span></p>
+                    <p class="medium text">Exclusividade <span class="highlightText">B2B</span></p>
                     <br>
                     <p class="littleText">Foco exclusivo nas necessidades e dinâmicas do mercado corporativo.</p>
                 </div>
 
                 <div class="item-diferenciais">
-                    <p class="medium-texto">Busca <span class="highlightText">Geográfica</span></p>
+                    <p class="medium text">Busca <span class="highlightText">Geográfica</span></p>
                     <br>
                     <p class="littleText">Encontre talentos e parceiros profissionais próximos ao seu projeto.</p>
                 </div>
@@ -179,19 +258,19 @@
             <div class="grid-container">
 
                 <div class="item-diferenciais">
-                    <p class="medium-texto"><span class="highlightText">Agenda</span> Integrada</p>
+                    <p class="medium text"><span class="highlightText">Agenda</span> Integrada</p>
                     <br>
                     <p class="littleText">Sincronização centralizada para prestação e execução de serviços.</p>
                 </div>
 
                 <div class="item-diferenciais">
-                    <p class="medium-texto"><span class="highlightText">Multiplas</span> Unidades</p>
+                    <p class="medium text"><span class="highlightText">Multiplas</span> Unidades</p>
                     <br>
                     <p class="littleText">Estrutura preparada para gerenciar filiais e demandas complexas.</p>
                 </div>
 
                 <div class="item-diferenciais">
-                    <p class="medium-texto">Qualificações <span class="highlightText">Checadas</span></p>
+                    <p class="medium text">Qualificações <span class="highlightText">Checadas</span></p>
                     <br>
                     <p class="littleText">Registro e validação de certificações e competências técnicas.</p>
                 </div>
@@ -200,19 +279,19 @@
             <div class="grid-container">
 
                 <div class="item-diferenciais">
-                    <p class="medium-texto"><span class="highlightText">Gestão</span> de Demandas</p>
+                    <p class="medium text"><span class="highlightText">Gestão</span> de Demandas</p>
                     <br>
                     <p class="littleText">Organização eficiente de projetos e requisitos técnicos fotovoltaicos.</p>
                 </div>
 
                 <div class="item-diferenciais">
-                    <p class="medium-texto">Catálogo <span class="highlightText">Consolidado</span></p>
+                    <p class="medium text">Catálogo <span class="highlightText">Consolidado</span></p>
                     <br>
                     <p class="littleText">Acesso rápido a equipamentos e especificações do setor.</p>
                 </div>
 
                 <div class="item-diferenciais">
-                    <p class="medium-texto"><span class="highlightText">Central</span> de Diálogo</p>
+                    <p class="medium text"><span class="highlightText">Central</span> de Diálogo</p>
                     <br>
                     <p class="littleText">Comunicação direta e centralizada entre todos os envolvidos.</p>
                 </div>
@@ -239,5 +318,40 @@
                 <p class="subTittle">Elos</p>
             </div>  
 
+            <div>
+                <p class="littleTittle" id="slogan-footer">Compra, manutenção,<br> históricos, <b>tudo</b> aqui.</p>
+            </div>
+
+        </div>
+        <div class="grid-container" id="grid-footer">
+
+            <div>
+                <p class="subTittle">Sobre</p>
+                <br>
+                <a href="#hero" class="text">Sobre a empresa</a>
+                <br><br>
+                <a href="#secao1" class="text">Nossa proposta</a>
+            </div>
+
+            <div>
+                <p class="subTittle">Navegação</p>
+                <br>
+                <a href="index.html" class="text">Home</a>
+                <br><br>
+                <a href="index.html#faq" class="text">FAQ</a>
+            </div>
+                
+            <div>
+                <p class="subTittle">Contatos</p>
+                <br>
+                <a href="index.html" class="text" id="instagram">Instagram</a>
+                <br><br>
+                <a href="index.html#faq" class="text" id="gmail">Gmail</a>
+            </div>
+
         </div>
     </section>
+
+</body>
+</html>
+<script src="js/aboutusScript.js" defer></script>
