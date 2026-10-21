@@ -6,10 +6,9 @@
     background-repeat: no-repeat;
 
 
-    min-height: 100vh;
+    height: clamp(20rem, 1rem + 100vh, 80rem);
     width: 100%;
     /*para o celular*/
-    min-height: 100dvh;
     
     position: relative;
 
@@ -49,9 +48,7 @@ header{
 
     z-index: 30;
 
-
-    width: fit-content;
-    max-width: 100%;
+    width: clamp(20rem, 1rem + 80vw, 60rem);
 }
 /* Início e Sobre nós*/
 .navigation .text{
@@ -352,6 +349,19 @@ border: 1px solid #56564a;
     text-align: center;
 }
 
+#secao2{
+    background-color: var(--beigeW);
+    margin-top: 5rem;
+}
+
+#secao2 .informacoes{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5rem;
+}
 
 .accent{
     color: var(--orange);
@@ -371,18 +381,130 @@ border: 1px solid #56564a;
 }
 
 #secao2 .instalacao{
-    background-color: var(--dark_grey);
+    background-color: var(--grey);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
+    min-width: 20rem;
     width: 100%;          
     max-width: 40rem;     
 
     padding: 0.6rem 1.5rem; 
     border-radius: 0.6rem;
 }
+
+#secao2 .informacao2_secao2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-inline: 1rem;
+    margin-top: 1.2rem;
+}
+
+#secao2 .tecnicos{
+    background-color: var(--grey);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    min-width: 20rem;
+    width: 100%;          
+    max-width: 40rem;     
+
+    padding: 0.6rem 1.5rem; 
+    border-radius: 0.6rem;
+}
+
+#secao2 .informacao3_secao2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-inline: 1rem;
+    margin-top: 1.2rem;
+}
+
+#secao2 .ofertas{
+    background-color: var(--grey);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;          
+    max-width: 40rem;   
+    min-width: 20rem;  
+
+    padding: 0.6rem 1.5rem; 
+    border-radius: 0.6rem;
+}
+
+#secao4{
+    width: min(100% - 2rem, 80rem);
+    margin-inline: auto;
+    margin-bottom: 3rem;
+}
+
+/*Carrossel seção 4*/
+.carrosselS4{
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+/* para retirar a barra de rolagem do próprio navegador, como chrome*/
+.carrosselS4::-webkit-scrollbar{
+    display: none;
+}
+
+
+/*utilizar no celular, para passar um por vez*/
+.carrosselS4 > *{
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
+/*para a imagem acompanhar o tamanho*/
+.carrosselS4 img{
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+#secao4 .big_text{
+    text-align: center;
+    padding-bottom: 2rem;
+    margin-top: 3rem;
+}
+
+.infos_V, 
+.infos_P, 
+.infos_S, 
+.infos_R{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.infos_V .text, 
+.infos_P .text, 
+.infos_S .text,
+.infos_R .text{
+    color: rgba(0,0,0,0.6);
+    padding-inline: 1rem;
+}
+
+
+
 
 @media (min-width: 1024px) {
     .hero{
@@ -393,6 +515,11 @@ border: 1px solid #56564a;
 .carrosselS1 {
   --gap: 2rem;           
   gap: var(--gap);
+}
+
+.carrosselS4{
+    --gap: 2rem;
+    gap: var(--gap);
 }
 
 @media (min-width: 768px) {
