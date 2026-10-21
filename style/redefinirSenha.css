@@ -33,12 +33,8 @@ header {
 
 .container {
     background: var(--white);
-    width: 40%;
-    height: 80%;
-    max-width: 600px;
-    min-width: 400px;
-    min-height: 400px;
-    min-height: auto;
+    width: clamp(28.1rem, 1rem + 40vw, 41rem);
+    height: clamp(10rem, 1rem + 69vh, 80rem);
     padding-left: 4rem;
     padding-right: 4rem;
     border-style: solid;
@@ -88,7 +84,7 @@ input {
     font-size: 1.125rem;
 }
 
-p.subTitle {
+p.sub_title {
     color: rgba(43, 43, 43, 0.40);
     padding-bottom: 2.0625rem;
 }
@@ -99,7 +95,7 @@ p.title {
     padding-bottom: 2.8125rem;
 }
 
-p.little-title {
+p.little_title {
     font-size: 1.125rem;
     color: var(--orange);
 }
@@ -116,6 +112,7 @@ button {
     cursor: pointer;
     display: flex;
     align-items: center;
+    margin-top: 2.225rem;
 }
 
 .direction {
