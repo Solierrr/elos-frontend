@@ -35,7 +35,7 @@
 /*Tem que mudar aqui*/
 
 .little_text{
-    font-size: clamp(100rem, 1rem + 0.5vw, 1rem);
+    font-size: clamp(1rem, 1rem + 5vw, 1rem);
     font-weight: 300;
 }
 
