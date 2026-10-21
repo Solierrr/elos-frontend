@@ -444,30 +444,44 @@ border: 1px solid #56564a;
 
 #secao3{
     display: flex;
-    align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .grid-container{
+    --gap_grid: clamp(2rem, 4vw, 4.5rem);
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4.5rem;
+    grid-template-columns: repeat(1fr);
+    gap: var(--gap_grid);
+
+    width: 100%;
+    max-width: 90rem;
+    margin-inline: auto;
+    padding: clamp(2rem, 5vw, 5rem) clamp(1.5rem,8vw, 10rem);
 
     text-align: center;
-    padding: 5rem 10rem;
+}
 
-
+.grid-container > div{
+    width: 100%;
+    max-width: 24rem;
+    margin-inline: auto;
 }
 
 .card-imagem-secao3{
-    width: 21.5rem;
-    height: 31.5rem;
+    width: 100%;
+    aspect-ratio: 21.5/31.5;
     border-radius: 10px;
 
     display: flex;
     justify-content: center;
     align-items: flex-end;
     padding-bottom: 1.5rem;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .card-imagem-secao3 p{
@@ -479,17 +493,18 @@ border: 1px solid #56564a;
     justify-content: center;
     align-items: center;
 
-    width: 21.5rem;
-    height: 11rem;
-    margin-top: 2.5rem;
+    width: 100%;
+    min-height: 11rem;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    padding: 1.5rem;
 
     background-color: var(--grey);
     border-radius: 10px;
-    border-color: #E1E1E1;
+    border: 1px solid #E1E1E1;
 }
 
 #gerenciamento-secao3{
-    background-image: url("../assets/img/img_catalogo.jpeg");
+    background-image: url("../assets/img/img_gerenciamento.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
@@ -503,7 +518,7 @@ border: 1px solid #56564a;
 }
 
 #catalogo-secao3{
-    background-image: url("../assets/img/img_gerenciamento.jpeg");
+    background-image: url("../assets/img/img_catalogo.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
@@ -611,7 +626,36 @@ border: 1px solid #56564a;
 
 @media (min-width: 768px) {
   .button_saiba {
-     /*para voltar ao tamanho do design */
     padding: 0.8rem 2rem; 
   }
+}
+
+/* ---------- TABLET: 2 colunas ---------- */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-container > div {
+        max-width: none;                     /* a coluna manda na largura */
+    }
+
+    /* o 3º card sozinho na linha de baixo fica centralizado */
+    .grid-container > div:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        width: calc(50% - var(--gap_grid) / 2);   /* mesma largura dos de cima */
+        justify-self: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* desfaz a regra do tablet */
+    .grid-container > div:last-child:nth-child(odd) {
+        grid-column: auto;
+        width: 100%;
+    }
 }
