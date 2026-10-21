@@ -252,8 +252,13 @@ border: 1px solid #56564a;
     margin-inline: auto;
     margin-bottom: 3rem;
 }
+#secao4{
+    width: min(100% - 2rem, 80rem);
+    margin-inline: auto;
+    margin-bottom: 3rem;
+}
 /*Carrossel seção 1*/
-.carrosselS1{
+.carrossel{
     display: flex;
     gap: 1.5rem;
     overflow-x: auto;
@@ -263,17 +268,17 @@ border: 1px solid #56564a;
 }
 
 /* para retirar a barra de rolagem do próprio navegador, como chrome*/
-.carrosselS1::-webkit-scrollbar{
+.carrossel::-webkit-scrollbar{
     display: none;
 }
 
 /*utilizar no celular, para passar um por vez*/
-.carrosselS1 > *{
+.carrossel > *{
     flex: 0 0 100%;
     scroll-snap-align: start;
 }
 /*para a imagem acompanhar o tamanho*/
-.carrosselS1 img{
+.carrossel img{
     display: block;
     width: 100%;
     height: auto;
@@ -282,32 +287,26 @@ border: 1px solid #56564a;
     border-radius: 0.5rem;
 }
 
-#secao1 .big_text{
+#secao1 .big_text, #secao4 .title{
     text-align: center;
     padding-bottom: 2rem;
     margin-top: 3rem;
 }
 
-.infos_BG, 
-.infos_D, 
-.infos_C, 
-.infos_O{
+.infos_carrossel{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
-.infos_BG .text, 
-.infos_D .text, 
-.infos_C .text,
-.infos_O .text{
+.infos_carrossel .text{
     color: rgba(0,0,0,0.6);
     padding-inline: 1rem;
 }
 
 
 
-#secao1 .passagem{
+.passagem{
     display: flex;
     margin-top: 1.5rem;
     flex: 1;
@@ -317,7 +316,7 @@ border: 1px solid #56564a;
     gap: 0.35rem;
 }
 
-#secao1 .passagem .quadrado1{
+.passagem .quadrado1{
     width: 3.8rem;
     height: 1rem;
     background-color: var(--orange);
@@ -325,7 +324,7 @@ border: 1px solid #56564a;
     border: none;
 }
 
-#secao1 .passagem .quadrado2{
+.passagem .quadrado2{
     width: 3.8rem;
     height: 1rem;
     border-radius: 0.25rem;
@@ -443,65 +442,6 @@ border: 1px solid #56564a;
     border-radius: 0.6rem;
 }
 
-#secao4{
-    width: min(100% - 2rem, 80rem);
-    margin-inline: auto;
-    margin-bottom: 3rem;
-}
-
-/*Carrossel seção 4*/
-.carrosselS4{
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-}
-
-/* para retirar a barra de rolagem do próprio navegador, como chrome*/
-.carrosselS4::-webkit-scrollbar{
-    display: none;
-}
-
-
-/*utilizar no celular, para passar um por vez*/
-.carrosselS4 > *{
-    flex: 0 0 100%;
-    scroll-snap-align: start;
-}
-/*para a imagem acompanhar o tamanho*/
-.carrosselS4 img{
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    border-radius: 0.5rem;
-}
-
-#secao4 .big_text{
-    text-align: center;
-    padding-bottom: 2rem;
-    margin-top: 3rem;
-}
-
-.infos_V, 
-.infos_P, 
-.infos_S, 
-.infos_R{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-.infos_V .text, 
-.infos_P .text, 
-.infos_S .text,
-.infos_R .text{
-    color: rgba(0,0,0,0.6);
-    padding-inline: 1rem;
-}
 
 
 
@@ -512,18 +452,14 @@ border: 1px solid #56564a;
     }
 }
 
-.carrosselS1 {
+.carrossel{
   --gap: 2rem;           
   gap: var(--gap);
 }
 
-.carrosselS4{
-    --gap: 2rem;
-    gap: var(--gap);
-}
 
 @media (min-width: 768px) {
-  .carrosselS1 > * {
+  .carrossel > * {
     flex-basis: calc((100% - var(--gap)) / 2);
   }
 }
