@@ -12,81 +12,152 @@
 
 </head>
 <body>
-    <div class = "hero">
+    <section class = "hero">
         <header>
-            <div class="header-container">
-                <div class="logo">
-                    <img src="assets/icone/LOGO.svg" alt="Logo">
-                    <p class="littleTittle">Elos</p>
-                </div>
+            <div class="header_container">
+                    <img src="assets/icone/logotipo.svg" alt="Logo">
                 <div class = "divisor"></div>
                 <nav class="navigation">
                      <a href="" class = "text">Início</a>
                     <a href="" class = "text">Sobre nós</a>
                 </nav>
-                <div class = "Pesquisa">
+                <div class = "pesquisa">
                     <img src="assets/icone/lupa.svg" alt="ícone de Lupa" class="lupa">
-                    <input class ="caixaPesquisa" type="text" 
-                    placeholder="" >
+                    <input type="text" 
+                    placeholder=""  id ="caixa_pesquisa"  >
                 </div>
-                <div class = "buttonsHeader">
-                    <button class = "buttonEntrar">
+                <div class = "buttons_header">
+                    <button class = "button_entrar" type="button" aria-label="Entrar">
                         <span class = "text">Entrar</span>
                     </button>
-                    <button class = "buttonCadastrar">
+                    <button class = "button_cadastrar" type="button" aria-label="Cadastrar">
                         <span class = "text">Cadastrar</span>
                     </button>
                 </div>
             </div>
         </header>
-        <div class = "destaqueHero">
-            <div class =  "fraseHero">
-                <p class = "bigText">Um elo entre<br>comprador e fornecedor</p>
-                <p class = "subTittle">Equipamentos fotovoltaicos adaptados a cada<br> necessidade e escala de consumo.</p>
+        <div class = "destaque_hero">
+            <div class =  "frase_hero">
+                <p class = "big_text">Um elo entre<br>comprador e fornecedor</p>
+                <p class = "sub_title">Equipamentos fotovoltaicos adaptados a cada<br> necessidade e escala de consumo.</p>
             </div>
-                <button class = "buttonSaiba">
-                    <span class = "littleTittle">Saiba mais!</span>
+                <button class = "button_saiba" type="button" aria-label = "Saiba mais sobre a empresa">
+                    <span class = "little_title">Saiba mais!</span>
                 </button>
         </div>
-    </div>
-    
-    <svg id = "divisaoArco" viewBox="0 0 1400 70" preserveAspectRatio = "none">
-        <path d= "M0,50 Q720,0 1440,50 L1400,70 L0,70 Z"></path>
-    </svg>
+        
+        <svg id = "divisao_arco" viewBox="0 0 1400 70" preserveAspectRatio = "none">
+            <path d= "M0,50 Q700,8 1440,50 L1400,70 L0,70 Z"></path>
+        </svg>
+    </section>
 
     <section id = "secao1">
-        <p class = "bigText">Explore nossos objetivos!</p>
+        <p class = "big_text">Explore nossos objetivos!</p>
         <div class = "carrosselS1">
-
-            <div class = "buscaG">
-                <img src="assets/img/imgBG.png" class = "imgBG">
-                <div class = "infosBG">
-                    <p>Busca Geográfica</p>
-                    <p> Encontre empresas e técnicas especializadas em instalação de painéis solares na sua região.</p>
+            <div class = "busca_G">
+                <img src="assets/img/imgBG.png" alt = "Uma busca geográfica." class = "img_BG">
+                <div class = "infos_BG">
+                    <p class = "sub_title">Busca Geográfica</p>
+                    <p class = "text"> Encontre empresas e técnicas especializadas em instalação de painéis solares na sua região.</p>
                 </div>
             </div>
 
             <div class = "divulgacao">
-                <img src = "assets/img/imgD.png" class = "imgD0">
-                <div class = "infosD">
-                    <p>Divulgação</p>
-                    <p>Conheça publicações sobre empresas técnicas, perfis de profissionais e outras informações relevantes do setor.</p>
+                <img src = "assets/img/imgD.png" alt = "Um homem pesquisando sobre divulgação de produtos." class = "img_D">
+                <div class = "infos_D">
+                    <p class = "sub_title">Divulgação</p>
+                    <p class = "text">Conheça publicações sobre empresas técnicas, perfis de profissionais e outras informações relevantes do setor.</p>
                 </div>
             </div>
 
             <div class = "comunicacao">
-                <img src = "assets/img/imgC.png" class = "imgC">
-                <div class = "infosC">
-                    <p>Comunicação</p>
-                    <p>Utilize o nosso chat para conversar diretamente com fornecedores e técnicos.</p>
+                <img src = "assets/img/imgC.png" alt = "Pessoas se comunicando." class = "img_C">
+                <div class = "infos_C">
+                    <p class = "sub_title">Comunicação</p>
+                    <p class = "text">Utilize o nosso chat para conversar diretamente com fornecedores e técnicos.</p>
                 </div>
             </div>
 
             <div class = "oportunidades">
-                <img src = "assets/img/imgO.png"class = "imgC">
-                <p>Oportunidades</p>
-                <p>Descubra as melhores condições e ofertas para instalação de painéis solares oferecidas por empresas técnicas.</p>
+                <img src = "assets/img/imgO.png" alt = "Oportunidades de negócio, sendo mostrada com uma chave e dinheiro ao fundo." class = "img_O">
+                <div class = "infos_O">
+                    <p class = "sub_title">Oportunidades</p>
+                    <p class = "text">Descubra as melhores condições e ofertas para instalação de painéis solares oferecidas por empresas técnicas.</p>
+                </div>
             </div>
+        </div>
+        <div class = "passagem">
+        <button class = "quadrado1" type="button" aria-label = "Ir para o primeiro carrossel"></button>
+        <button class = "quadrado2" type="button" aria-label = "Ir para o segundo carrossel"></button>
+        </div>
+    </section>
+    <section id = "secao2">
+        <p class = "big_text">Conheça mais sobre nós!</p>
+    </section>
+    <section id="secao3">
+        <div class="grid-container">
+            <div>
+                <div class="card-imagem-secao3" id="gerenciamento-secao3">
+                    <p class="title">Serviços técnicos</p></div>
+                <div class="card-texto-secao3">
+                    <p class="text">Gerencie, de forma centralizada, todas as unidades e demandas da sua empresa com controle e agilidade.</p>
+                </div>
+            </div>
+            <div>
+                <div class="card-imagem-secao3" id="servicos-secao3">
+                    <p class="title">Serviços técnicos</p>
+                </div>
+                <div class="card-texto-secao3">
+                    <p class="text">Solicite serviços técnicos especializados a profissionais qualificados do setor fotovoltaico, com rapidez e segurança.</p>
+                </div>
+            </div>
+            <div>
+                <div class="card-imagem-secao3" id="catalogo-secao3">
+                    <p class="title">Catálogo</p>
+                </div>
+                <div class="card-texto-secao3">
+                    <p class="text">Consulte produtos e ofertas de fornecedores especializados do setor fotovoltaico, com praticidade e agilidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="secao5">
+        <div>
+            <div>
+                <p class="big_text">Agora também temos <span class=highlight_text>fornecedores!</span></p>
+                <p class="sub_title">Ampliamos nossa atuação para gerar ainda mais valor</p>
+                <p class="text">Nosso aplicativo abrange:</p>
+            </div>
+            <div class="atuacoes-fornecedores-secao5">
+                <div>
+                    <div class="caixa-abrange-fornecedor">
+                        <p class="text">Fabricantes</p>
+                    </div>
+                    <div class="caixa-abrange-fornecedor">
+                        <p class="text">Distribuidores</p>
+                    </div>
+                    <div class="caixa-abrange-fornecedor">
+                        <p class="text">Revendedores</p>
+                    </div>
+                    <div class="caixa-abrange-fornecedor">
+                        <p class="text">Parceiros</p>
+                    </div>
+                    <div class="caixa-abrange-fornecedor">
+                        <p class="text">Profissionais independentes</p>
+                    </div>
+                    <div class="caixa-abrange-fornecedor">
+                        <p class="text">Profissionais de empresas</p>
+                    </div>
+                    <div class="caixa-abrange-fornecedor">
+                        <p class="text">Empresas tecnicas especializadas</p>
+                    </div>
+                </div>
+                <div class="imagem-atuacao-secao5">
+                    <img src="assets/img/imgFornecedor.jpg"
+                </div>
+            </div>
+
         </div>
     </section>
 </body>

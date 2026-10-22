@@ -4,6 +4,10 @@ body{
     background-color: var(--light-grey);
 }
 
+[hidden] {
+    display: none !important;
+}
+
 /* Hero personalização*/
 #hero{
     background-image: url("../assets/img/imgHeroAboutUs.jpg");
@@ -12,6 +16,7 @@ body{
     width: 100%;
     
     position: relative;
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
@@ -135,7 +140,7 @@ header{
 }
 
 /* Logo personalização*/
-.logo .littleTittle{
+.logo .little_title{
     color: var(--white);
 }
 .logo{
@@ -188,12 +193,13 @@ border-radius: 1rem;
 
     width: fit-content;
 }
-.fraseHero .subTittle{
+.fraseHero .sub_title{
     color: var(--white);
     text-align: center;
     line-height: 1.4;
+    margin-top: 1rem;
 }
-.fraseHero .bigText{
+.fraseHero .big_text{
     color: var(--white);
     text-align: center;
     line-height: 1;
@@ -234,9 +240,9 @@ border-radius: 1rem;
     align-items: center;
     justify-content: center;
 
-    margin-top: 11rem;
+    margin-top: 6rem;
 
-    height: 40rem;
+    height: 55rem;
 
 }
 
@@ -289,7 +295,7 @@ border-radius: 1rem;
 
 }
 
-ul{
+.lista-secao2{
     font-size: 1.2rem;
     font-weight: 380;
     margin-left: 15%;
@@ -341,6 +347,16 @@ ul{
 }
 
     /* botões planos secao 3------------- */
+
+.botoes-secao3{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-right: 12rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
 .botoes-planos {
     display: flex;
     width: min(800px, 100%);
@@ -363,6 +379,10 @@ ul{
     font-weight: 300;
 }
 
+.button-mensalidade{
+    margin-right: 5rem;
+}
+
 .botao-plano:last-child {
     border-right: 0;
 }
@@ -377,22 +397,26 @@ ul{
     outline: 2px solid #000;
 }
 
-    /* card secao 3------------- */
 
-.card-plano {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    padding: 2.5rem 2rem;
-    margin-top: 5rem;
+    /*------------ CARD SECAO 3 ------------- */
+        /* ------------ CARD FORNECEDOR ----------------- */
+#card-fornecedor {
+    padding: 2.5rem 1rem;
     border: 5px solid var(--grey);
     border-radius: 30px;
     background-color: var(--white);
+
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 1rem 0;
 }
 
 .coluna-principal {
-    padding-right: 2.2rem;
+    padding: 0 2rem;
     border-right: 3px solid var(--grey);
+
+    width: 36.5rem;
 }
 
 .coluna-principal p {
@@ -400,74 +424,86 @@ ul{
     margin: 0.4rem;
 }
 
-#lista-beneficios, #lista-adicionais {
+.coluna-faixas{
+    width: 35rem;
+}
+
+.lista-beneficios {
     list-style: none;
     padding: 0;
     margin-top: 1rem;
 }
 
-#listaBeneficios li {
-    position: relative;
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    line-height: 1.4;
+.lista-beneficios li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.9rem;
 }
 
-#listaBeneficios li::before {
-    position: absolute;
-    left: 0;
-    content: url("../assets/icone/ul_checked.svg");
+.lista-beneficios li::before {
+    content:"";
+    display: block;
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    background-image: url("../assets/icone/ul_checked.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
-#listaBeneficios li.nao-incluido::before {
-    content: url("../assets/icone/ul_unchecked.svg");
+.lista-beneficios li.unchecked::before {
+    background-image: url("../assets/icone/ul_unchecked.svg");
 }
 
-#lista-faixas li {
+.faixas-fornecedor {
+    list-style: none;
+    padding-left: 0;
+    margin: 2rem 0;
+    align-self: stretch;
+}
+
+.faixas-fornecedor li {
     margin-bottom: 0.5rem;
-    line-height: 1.4;
+    line-height: 1;
+}
+        /* ------------ CARD PROFISSIONAL ----------------- */
+
+#card-profissional{
+    display: flex;
+    gap: 1rem;
+    width: 64rem;
+    margin-inline: auto;
 }
 
-.observacao {
-    margin-top: 2rem;
+.plano-profissional {
+    border: 5px solid var(--grey);
+    border-radius: 30px;
+    background-color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    flex: 1;
+    margin: 1rem 0;
+    padding: 3rem 2.5rem;
+
+    height: 35.25rem;
 }
 
-@media (max-width: 700px) {
-    .controles {
-        flex-direction: column;
-        margin-bottom: 2rem;
-    }
+.plano-profissional p{
+    text-align: center;
+    align-self: stretch;
+    margin-bottom: 0.4rem;
 
-    .botoes-planos {
-        min-height: 4rem;
-    }
-
-    .botao-plano {
-        padding: 1rem 0.4rem;
-        font-size: 14px;
-    }
-
-    .card-plano {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1.5rem 1.2rem;
-    }
-
-    .coluna-principal {
-        padding-right: 0;
-        padding-bottom: 1.5rem;
-        border-right: 0;
-        border-bottom: 3px solid #ededed;
-    }
-
-    .coluna-principal h2 {
-        margin-top: 0;
-    }
-
-    .coluna-adicionais h3 {
-        font-size: 1.2rem;
-    }
 }
+
+.plano-profissional .lista-beneficios {
+    align-self: stretch;
+}
+
 
 /* Seção 4 -----------------------------------*/
 #secao4{
@@ -503,10 +539,6 @@ ul{
     text-align: center;
 }
 
-.medium{
-    font-weight: 500;
-}
-
 /* Marketing -----------------------------------*/
 #marketing{
     display: flex;
@@ -529,7 +561,7 @@ ul{
     color: var(--white);
 }
 
-.button-cadastre-se .subTittle{
+.button-cadastre-se .sub_title{
     color: var(--white)
 }
 .button-cadastre-se{
@@ -578,7 +610,7 @@ ul{
     align-items: center;
 }
 
-#logo-footer .subTittle{
+#logo-footer .sub_title{
     padding-left: 0.5rem;
     color: var(--orange);
 }

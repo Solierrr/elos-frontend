@@ -9,3 +9,12 @@ body{
     background-color: var(--beige);
     overflow-x: hidden;
 }
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, svg{
+    max-width: 100%;
+}

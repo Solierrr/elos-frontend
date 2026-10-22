@@ -9,38 +9,46 @@
     word-spacing: 0;
 }
 
-.bigText{
+.big_text{
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 650;
+    letter-spacing: -0.1rem;
 }
 
-.tittle{
+.title{
     font-size: 2rem;
     font-weight: 600;
 }
 
-.subTittle{
+.sub_title{
     font-size: 1.6rem;
     font-weight: 500;
 }
 
-.littleTittle{
+.little_title{
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 350;
 }
 
 .text{
     font-size: 1.2rem;
-    font-weight: 380;
+    font-weight: 350;
 }
 
 
-.littleText{
+.little_text{
     font-size: 1rem;
     font-weight: 300;
 }
 
-.highlightText{
+.accent{
     color: var(--orange);
 }
 
+.medium{
+    font-weight: 500;
+}
+
+.bold{
+    font-weight: 650;
+}
