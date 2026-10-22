@@ -39,3 +39,13 @@
     font-weight: 300;
 }
 
+.accent_white{
+    font-weight: 700;
+    color: var(--white);
+}
+
+.accent{
+    color: var(--orange);
+}
+
+

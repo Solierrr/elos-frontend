@@ -360,9 +360,6 @@ border: 1px solid #56564a;
     padding: 5rem;
 }
 
-.accent{
-    color: var(--orange);
-}
 
 #secao2 .title{
     color: color-mix(in srgb, var(--black) 85%, transparent);
@@ -524,24 +521,22 @@ border: 1px solid #56564a;
     background-position: center bottom;
 }
 
+
+/*Seção 5 ----------------*/
+
 #secao5{
     background-color: var(--black);
-    width: clamp(1rem, 1rem + 100vw, + 20rem);
-    height: clamp(20rem, 1rem + 10vw, + 50rem);
+    width: 100%;
     margin: 5rem 0;
-}
-
-.accent_white{
-    font-weight: 700;
-    color: var(--white);
 }
 
 
 .frase_secao5{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 2.2rem;
-    margin: 0 10rem;
+    padding: 2rem 1.5rem;
 }
 
 
@@ -563,8 +558,14 @@ border: 1px solid #56564a;
 
 #container_secao5{
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+}
+
+#container_secao5 img{
+    width:100%;
+    aspect-ratio: 4/3;
+    object-fit:cover;
+    display: block;
 }
 
 /* seção 6 --------------------------*/
@@ -605,7 +606,7 @@ border: 1px solid #56564a;
 
 
 
-
+/*Eu ainda vou me aprofundar mais aqui no media, só deixei assim por enquanto para não encher de erro de responsividade*/
 @media (min-width: 1024px) {
     .hero{
         min-height: 120vh;
@@ -630,20 +631,19 @@ border: 1px solid #56564a;
   }
 }
 
-/* ---------- TABLET: 2 colunas ---------- */
+/*Seção 3*/
 @media (min-width: 768px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .grid-container > div {
-        max-width: none;                     /* a coluna manda na largura */
+        max-width: none;                     
     }
 
-    /* o 3º card sozinho na linha de baixo fica centralizado */
     .grid-container > div:last-child:nth-child(odd) {
         grid-column: 1 / -1;
-        width: calc(50% - var(--gap_grid) / 2);   /* mesma largura dos de cima */
+        width: calc(50% - var(--gap_grid) / 2);   
         justify-self: center;
     }
 }
@@ -658,4 +658,36 @@ border: 1px solid #56564a;
         grid-column: auto;
         width: 100%;
     }
+}
+
+/*seção 5*/
+/* Tablet em diante: lado a lado */
+@media (min-width: 768px) {
+  #container_secao5 {
+    flex-direction: row;
+    min-height: 30rem;
+    align-items: stretch;
+  }
+
+  #container_secao5 img {
+    flex: 1;           
+    min-width: 0;   
+    width: 50%;    
+    height: auto;       
+    aspect-ratio: auto; 
+    align-self: stretch;
+    object-position: 18% center;
+  }
+
+  .frase_secao5 {
+    flex: 1;           
+    padding: 4rem;
+  }
+}
+
+/* Desktop: mais respiro nas laterais */
+@media (min-width: 1024px) {
+  .frase_secao5 {
+    padding-inline: 6rem;
+  }
 }
