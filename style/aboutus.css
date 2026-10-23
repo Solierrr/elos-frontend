@@ -247,8 +247,8 @@ border-radius: 1rem;
 }
 
 #secao-possibilidades{
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
 
 }
@@ -276,8 +276,7 @@ border-radius: 1rem;
 .possibilidades-secao2:hover{
     background-color: var(--white);
 
-    width: 24rem;
-    height: 32rem;
+    transform: scale(1.09);
 }
 
 .texto-secao2{
@@ -311,12 +310,20 @@ border-radius: 1rem;
 
     margin-top: 11rem;
 
-    height: 57.875rem;
+    height: 62.5rem;
 
     background-color: var(--beige);
 }
 
     /* interruptor secao 3------------- */
+.button-mensalidade{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+}
+#texto-mensalidade{
+    margin-top: 0.2rem;
+}
 .interruptor{
     width: 7rem;
     height: 3rem;
@@ -343,7 +350,7 @@ border-radius: 1rem;
 }
 
 .interruptor.anual .interruptor-bolinha {
-    transform: translateX(32px);
+    transform: translateX(3.4rem);
 }
 
     /* botões planos secao 3------------- */
@@ -358,8 +365,8 @@ border-radius: 1rem;
 }
 
 .botoes-planos {
-    display: flex;
-    width: min(800px, 100%);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     min-height: 5.5rem;
     overflow: hidden;
     border-radius: 50px;
@@ -417,6 +424,8 @@ border-radius: 1rem;
     border-right: 3px solid var(--grey);
 
     width: 36.5rem;
+
+   height:26rem;
 }
 
 .coluna-principal p {
@@ -504,6 +513,38 @@ border-radius: 1rem;
     align-self: stretch;
 }
 
+        /* ------------ CARD CLIENTE ----------------- */
+
+#card-cliente {
+    padding: 2.5rem 1rem;
+    border: 5px solid var(--grey);
+    border-radius: 30px;
+    background-color: var(--white);
+
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 1rem 0;
+}
+
+#titulo-coluna-faixas-cliente{
+    margin-bottom: 2rem;
+}
+
+#faixas-unidades{
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+    list-style: none;
+    padding-left: 0;
+    margin: 2rem 0;
+    align-self: stretch;
+}
+
+#faixas-unidades li {
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
 
 /* Seção 4 -----------------------------------*/
 #secao4{
