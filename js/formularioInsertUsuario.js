@@ -28,7 +28,7 @@ tipoUsuario.addEventListener('change', event => {
         
         <div>
             <div class="label-e-input">
-                <label for="eh-mandante">É a mandante?</label>
+                <label for="eh-mandante">É uma filial?</label>
                 <select name="eh-mandante" id="eh-mandanter" required>
                     <option value="" disabled selected hidden>Selecione uma opção</option>
                     <option value="true">Sim</option>
@@ -129,29 +129,16 @@ document.addEventListener('change', event => {
                     </div>
                     <span id="erro-id-fornecedor" class="span-erro"></span>
                 </div>
+                <div>
+                    <div class="label-e-input">
+                        <label for="documento-contrato">Link do documento do contrato</label>
+                        <input type="text" name="documento-contrato" id="documento-contrato" required>                
+                    </div>
+                    <span id="erro-documento-contrato" class="span-erro"></span>
+                </div>
             `;
         } else {
             conteinerIdFornecedor.innerHTML = '';
         }
     }
 });
-
-
-//Partes relacionadas ao botão da senha:
-const botaoSenha = document.getElementById('olho-senha');
-const inputSenha = document.getElementById('senha');
-
-//Botão de mostrar a senha
-botaoSenha.addEventListener('click', () => {
-    const tipo = inputSenha.type === 'password' ? 'text' : 'password';
-
-    if (tipo === 'text') {
-        botaoSenha.src = botaoSenha.dataset.urlOlho;
-    } else {
-        botaoSenha.src = botaoSenha.dataset.urlOculto;
-    }
-
-    inputSenha.type = tipo;
-});
-
-
