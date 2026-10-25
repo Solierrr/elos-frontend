@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,26 +14,23 @@
 <body>
     <div id = "hero">
         <header>
-            <div class="header-container">
-                <div class="logo">
-                    <img src="assets/icone/LOGO.svg" alt="Logo">
-                    <p class="little_title">Elos</p>
-                </div>
+            <div class="header_container">
+                <img src="assets/icone/logotipo.svg" alt="Logo">
                 <div class = "divisor"></div>
                 <nav class="navigation">
-                     <a href="index.html" class = "text">Inicio</a>
-                    <a href="#secao1" class = "text">Sobre nós</a>
+                     <a href="" class = "text">Início</a>
+                    <a href="" class = "text">Sobre nós</a>
                 </nav>
-                <div class = "Pesquisa">
+                <div class = "pesquisa">
                     <img src="assets/icone/lupa.svg" alt="ícone de Lupa" class="lupa">
-                    <input class ="caixaPesquisa" type="text" 
-                    placeholder="" >
+                    <input type="text" 
+                    placeholder=""  id ="caixa_pesquisa"  >
                 </div>
-                <div class = "buttonsHeader">
-                    <button class = "buttonEntrar">
+                <div class = "buttons_header">
+                    <button class = "button_entrar" type="button" aria-label="Entrar">
                         <span class = "text">Entrar</span>
                     </button>
-                    <button class = "buttonCadastrar">
+                    <button class = "button_cadastrar" type="button" aria-label="Cadastrar">
                         <span class = "text">Cadastrar</span>
                     </button>
                 </div>
@@ -41,8 +38,8 @@
         </header>
         <div class = "destaqueHero">
             <div class =  "fraseHero">
-                <p class = "big_text">Sobre o <span class=accent>Elos</span></p>
-                <p class = "sub_title">Te ajudamos a encontrar quem precisar no setor solar,<br>seja <span class=accent>fornecedor</span>, <span class=accent>profissional</span> ou <span class=accent>cliente</span></p>
+                <h1 class = "big_text">Sobre o Elos</h1>
+                <p class = "sub_title">Te ajudamos a encontrar quem precisar no setor solar, seja fornecedor, profissional ou cliente</p>
             </div><!--Necessária para o posicionamento do arco -->
         </div>
         
@@ -52,79 +49,88 @@
     </div>
     
     <section id="secao1">
-        <div class="desc-secao1">
-            <div>
-                <p class="big_text">Afinal, qual é o <br>nosso <span class="accent">objetivo?</span></p>
-                <br>
-                <p class="little_title">Nosso objetivo é <b>facilitar a <span class=accent>conexão</span></b> entre os polos de  atuação do setor solar, centralizando o setor solar <b>em um só lugar.</b>
-                <br><br>
-                Nosso serviço não se enquadra para clientes e fornecedores como pessoas fisicas.</p>
+        <div class="container-secao1">
+            <div class="desc-secao1">
+                <div class="gap-1rem">
+                    <h2 class="big_text flex-column ">O setor solar, <span class="accent">em um só lugar.</span></h2>
+                    <div class="flex-column gap-2rem texto-secao1">
+                        <p>Nosso objetivo é facilitar a <span class="accent">conexão</span> entre os agentes do setor solar, aproximando empresas, fornecedores e profissionais <span class="accent">em uma única plataforma.</span></p>
+
+                        <p>Buscamos centralizar informações, oportunidades e demandas, além de facilitar a <span class="accent">comunicação</span> entre os participantes.</p>
+
+                        <p>A <span class="accent">Elos</span> é voltada exclusivamente ao <span class="accent">mercado corporativo.</span></p>
+                    </div>
+                </div>
+                
+                <img class="img-secao1 "src="../assets/img/imgSecao1.jpg">
             </div>
-            
-            <img class="img-secao1 "src="../assets/img/imgSecao1.jpg">
         </div>
     </section>
 
     <section id="secao2">
         <div>
-            <p class="big_text secoes-title">Quais possibilidades o <span class="accent">Elos</span> traz?</p>
+            <h2 class="big_text secoes-title">Quais possibilidades o <span class="accent">Elos</span> traz?</h2>
 
             <div id="secao-possibilidades">
 
                 <div class="possibilidades-secao2">
-                    <p class="title texto-secao2">Fornecedor</p>
-                    <br>
-                    <p class="text texto-secao2">Venda seus produtos e encontre novos clientes</p>
+                    <div class="flex-column gap-1rem">
+                        <h3 class="title texto-secao2">Fornecedor</h3>
 
-                    <div class="divisor-secao2"></div>
-
-                    <p class="sub_title texto-secao2">O que <span class="accent">você</span> pode fazer</p>
-                    <br>
-                    <ul class="lista-secao2">
-                        <li>Contatar clientes</li>
-                        <br>
-                        <li>Gerenciar projetos solares</li>
-                        <br>
-                        <li>Criar um catalogo de produtos</li>
-                        <br>
-                        <li>Encontrar profissionais</li>
+                        <p class="text texto-secao2">Venda seus produtos e encontre novos clientes</p>
+                    </div>
+                    
+                    <div class="flex-column gap-1rem">
+                        <div class="divisor-secao2"></div>
+                        <h4 class="sub_title texto-secao2">O que <span class="accent">você</span> pode fazer</h4>
+                        
+                        <ul class="lista-secao2">
+                            <li>Contatar clientes</li>
+                            <li>Gerenciar projetos solares</li>
+                            <li>Criar um catalogo de produtos</li>
+                            <li>Encontrar profissionais</li>
                     </ul>
+                    </div>
+                    
                 </div>
 
                 <div class="possibilidades-secao2">
-                    <p class="title texto-secao2">Profissional</p>
-                    <br>
-                    <p class="text texto-secao2">Encontre oportunidades e organize seus trabalhos</p>
+                    <div class="flex-column gap-1rem">
+                        <h3 class="title texto-secao2">Profissional</h3>
+                    
+                        <p class="text texto-secao2">Encontre oportunidades e organize seus trabalhos</p>
+                    </div>    
+                    
+                    <div class="flex-column gap-1rem">
+                        <div class="divisor-secao2"></div>
 
-                    <div class="divisor-secao2"></div>
-
-                    <p class="sub_title texto-secao2">O que <span class="accent">você</span> pode fazer</p>
-                    <br>
-                    <ul class="lista-secao2">
-                        <li>buscar serviços e empregos</li>
-                        <br>
-                        <li>Organizar sua agenda</li>
-                        <br>
-                        <li>Cadastrar suas qualificações</li>
-                    </ul>
-                </div>  
+                        <h4 class="sub_title texto-secao2">O que <span class="accent">você</span> pode fazer</h4>
+                        <ul class="lista-secao2">
+                            <li>buscar serviços e empregos</li>
+                            <li>Organizar sua agenda</li>
+                            <li>Cadastrar suas qualificações</li>
+                        </ul>
+                    </div>
+                </div>
 
                 <div class="possibilidades-secao2">
-                    <p class="title texto-secao2">Cliente</p>
-                    <br>
-                    <p class="text texto-secao2">Encontre fornecedores e monte seu projeto</p>
+                    <div id="title-card3-secao2" class="flex-column gap-1rem">
+                        <h3 class="title texto-secao2">Cliente</h3>
+                    
+                        <p class="text texto-secao2">Encontre fornecedores e monte seu projeto</p>
+                    </div>
+                    
+                    <div id="list-card3-secao2" class="flex-column gap-1rem">
+                        <div class="divisor-secao2"></div>
 
-                    <div class="divisor-secao2"></div>
+                        <h4 class="sub_title texto-secao2">O que <span class="accent">você</span> pode fazer</h4>
+                        <ul class="lista-secao2">
+                            <li>Buscar fornecedores</li>
+                            <li>Consultar catalogos</li>
+                            <li>Criar projetos</li>
+                        </ul>
+                    </div>
 
-                    <p class="sub_title texto-secao2">O que <span class="accent">você</span> pode fazer</p>
-                    <br>
-                    <ul class="lista-secao2">
-                        <li>Buscar fornecedores</li>
-                        <br>
-                        <li>Consultar catalogos</li>
-                        <br>
-                        <li>Criar projetos</li>
-                    </ul>
                 </div>
 
             </div>
@@ -133,7 +139,7 @@
 
     <section id="secao3">
         
-        <p class="big_text secoes-title">Conheça nossos <span class="accent">planos</span></p>
+        <h2 class="big_text secoes-title">Conheça nossos <span class="accent">planos</span></h2>
 
         <div class="botoes-secao3">
 
@@ -146,7 +152,7 @@
                     <span class="interruptor-bolinha"></span>
                 </button>
 
-                <span id="texto-mensalidade" class="medium">Mensal</span>
+                <span id="texto-mensalidade" class="medium text">Mensal</span>
             </div>
 
             <div class="botoes-planos">
@@ -179,7 +185,7 @@
             <div id="card-fornecedor">
                 <div class="coluna-principal">
 
-                    <p class="title">Elos Fornece</p>
+                    <h3 class="title">Elos Fornece</h3>
 
                     <p class="text">A partir de:</p>
 
@@ -196,25 +202,25 @@
                     </ul>
 
                 </div>
-                <br>
+                
                 <div class="coluna-faixas">
 
                     <p class="little_title">
-                        Nosso plano conta com algumas faixas de <br>preço extras. Até:
+                        Nosso plano conta com algumas faixas de preço extras. Até:
                     </p>
 
                     <ul id="faixas-produtos" class="little_text faixas-fornecedor">
-                        <li>49 produtos - <span class="accent bold">R$ 00,00</span></li>
-                        <li>99 produtos - <span class="accent bold" data-mensal="+R$ 50,00" data-anual="+R$ 500,00">+R$ 50,00</span></li>
-                        <li>149 produtos - <span class="accent bold" data-mensal="+R$ 100,00" data-anual="+R$ 1000,00">+R$ 100,00</span></li>
-                        <li>150+ produtos - <span class="accent bold" data-mensal="+R$ 150,00" data-anual="+R$ 1500,00">+R$ 150,00</span></li>
+                        <li>49 produtos<span class="accent bold">R$ 00,00</span></li>
+                        <li>99 produtos<span class="accent bold" data-mensal="+R$ 50,00" data-anual="+R$ 500,00">+R$ 50,00</span></li>
+                        <li>149 produtos<span class="accent bold" data-mensal="+R$ 100,00" data-anual="+R$ 1000,00">+R$ 100,00</span></li>
+                        <li>150+ produtos<span class="accent bold" data-mensal="+R$ 150,00" data-anual="+R$ 1500,00">+R$ 150,00</span></li>
                     </ul>
 
                     <ul id="faixas-profissionais" class="little_text faixas-fornecedor">
-                        <li>19 produtos - <span class="accent bold">R$ 00,00</span></li>
-                        <li>39 produtos - <span class="accent bold" data-mensal="+R$ 150,00" data-anual="+R$ 1500,00">+R$ 150,00</span></li>
-                        <li>59 produtos - <span class="accent bold" data-mensal="+R$ 300,00" data-anual="+R$ 3000,00">+R$ 300,00</span></li>
-                        <li>60+ produtos - <span class="accent bold" data-mensal="+R$ 450,00" data-anual="+R$ 4500,00">+R$ 450,00</span></li>
+                        <li>19 produtos<span class="accent bold">R$ 00,00</span></li>
+                        <li>39 produtos<span class="accent bold" data-mensal="+R$ 150,00" data-anual="+R$ 1500,00">+R$ 150,00</span></li>
+                        <li>59 produtos<span class="accent bold" data-mensal="+R$ 300,00" data-anual="+R$ 3000,00">+R$ 300,00</span></li>
+                        <li>60+ produtos<span class="accent bold" data-mensal="+R$ 450,00" data-anual="+R$ 4500,00">+R$ 450,00</span></li>
                     </ul>
 
                     <p class="little_text observacao" data-mensal="Ao passar de uma faixa para outra, o novo valor ao lado é acrescido da mensalidade e cobrada a partir do proximo mês" data-anual="Ao passar de uma faixa para outra, a diferença entre as faixas com base na quantidade de meses restantes e do contrato é cobrada em 30 dias">Ao passar de uma faixa para outra, o novo valor ao lado é acrescido da mensalidade e cobrada a partir do proximo mês</p>
@@ -225,7 +231,7 @@
             <div id="card-profissional" hidden>
 
                 <div class="plano-profissional">
-                    <p class="title">Elos Campo</p>
+                    <h3 class="title">Elos Campo</h3>
                     <p class="text">A partir de:</p>
                     <p class="big_text accent" id="preco-campo" data-mensal="R$ 29,00" data-anual="R$ 290,00" >R$ 29,00</p>
                     <p class="medium text accent periodoPlano" data-mensal="por mês" data-anual="por ano">por mês</p>
@@ -238,7 +244,7 @@
                 </div>
 
                 <div class="plano-profissional">
-                    <p class="title">Elos Campo+</p>
+                    <h3 class="title">Elos Campo+</h3>
                     <p class="text">A partir de:</p>
                     <p class="big_text accent" id="preco-campo-mais" data-mensal="R$ 59,00" data-anual="R$ 590,00">R$ 59,00</p>
                     <p class="medium text accent periodoPlano" data-mensal="por mês" data-anual="por ano">por mês</p>
@@ -251,12 +257,12 @@
                     </ul>
                 </div>
 
-            </div> <!-- Card dos planos do profissional, o JS que vai ativa-lo. Está aqui porque é o unico com a estrutura diferente-->
+            </div> <!-- Card dos planos do profissional, o JS que vai ativa-lo. -->
 
             <div id="card-cliente" hidden>
                 <div class="coluna-principal">
 
-                    <p class="title">Elos Base</p>
+                    <h3 class="title">Elos Base</h3>
 
                     <p class="text">A partir de:</p>
 
@@ -275,101 +281,99 @@
                 <br>
                 <div class="coluna-faixas">
 
-                    <p class="title" id="titulo-coluna-faixas-cliente">Elos Rede</p>
+                    <h3 class="title" id="titulo-coluna-faixas-cliente">Elos Rede</h3>
 
-                    <p class="little_title">
-                        O preço varia de acordo com a quantidade de <br>unidades. Passa a ser cobrado a partir de 5.<br>até:
-                    </p>
+                    <p class="little_title">O preço varia de acordo com a quantidade de unidades. Passa a ser cobrado a partir de 5.
+                    até:</p>
 
                     <ul id="faixas-unidades" class="little_text">
-                        <li>5 unidades - <span class="accent bold">R$ 00,00</span></li>
-                        <li>24 unidades - <span class="accent bold" data-mensal="+R$ 50,00" data-anual="+R$ 500,00">+R$ 50,00</span></li>
-                        <li>49 unidades - <span class="accent bold" data-mensal="+R$ 100,00" data-anual="+R$ 1000,00">+R$ 100,00</span></li>
-                        <li>74 unidades - <span class="accent bold" data-mensal="+R$ 150,00" data-anual="+R$ 1500,00">+R$ 150,00</span></li>
-                        <li>99 unidades - <span class="accent bold" data-mensal="+R$ 200,00" data-anual="+R$ 2000,00">+R$ 200,00</span></li>
-                        <li>100+ unidades - <span class="accent bold" data-mensal="+R$ 250,00" data-anual="+R$ 2500,00">+R$ 250,00</span></li>
+                        <li>5 unidades<span class="accent bold">R$ 00,00</span></li>
+                        <li>24 unidades<span class="accent bold" data-mensal="+R$ 50,00" data-anual="+R$ 500,00">+R$ 50,00</span></li>
+                        <li>49 unidades<span class="accent bold" data-mensal="+R$ 100,00" data-anual="+R$ 1000,00">+R$ 100,00</span></li>
+                        <li>74 unidades<span class="accent bold" data-mensal="+R$ 150,00" data-anual="+R$ 1500,00">+R$ 150,00</span></li>
+                        <li>99 unidades<span class="accent bold" data-mensal="+R$ 200,00" data-anual="+R$ 2000,00">+R$ 200,00</span></li>
+                        <li>100+ unidades<span class="accent bold" data-mensal="+R$ 250,00" data-anual="+R$ 2500,00">+R$ 250,00</span></li>
                         
                     </ul>
 
                     <p class="little_text observacao" data-mensal="Ao passar de uma faixa para outra, o novo valor ao lado é acrescido da mensalidade e cobrada a partir do proximo mês" data-anual="Ao passar de uma faixa para outra, a diferença entre as faixas com base na quantidade de meses restantes e do contrato é cobrada em 30 dias">Ao passar de uma faixa para outra, o novo valor ao lado é acrescido da mensalidade e cobrada a partir do proximo mês</p>
 
                 </div>
-            </div> <!-- Card dos planos do cliente, o JS que vai ativa-lo. Está aqui porque é o unico com a estrutura diferente-->
+            </div> <!-- Card dos planos do cliente, o JS que vai ativa-lo.  -->
         </div>
     </section>
 
     <section id="secao4">
         <div>
-            <p class="big_text  secoes-title">Nossos <span class="accent">diferenciais</span></p>
+            <h2 class="big_text  secoes-title">Nossos <span class="accent">diferenciais</span></h2>
 
             <div class="grid-container">
 
-                <div class="item-diferenciais">
-                    <p class="medium text">Ecossistema <span class="accent">Unificado</span></p>
-                    <br>
+                <div class="item-diferenciais gap-1rem">
+                    <h3 class="medium text">Ecossistema <span class="accent">Unificado</span></h3>
                     <p class="little_text">Ambiente único para fornecedores, empresas e profissionais.</p>
                 </div>
 
-                <div class="item-diferenciais">
-                    <p class="medium text">Exclusividade <span class="accent">B2B</span></p>
-                    <br>
+                <div class="item-diferenciais gap-1rem">
+                    <h3 class="medium text">Exclusividade <span class="accent">B2B</span></h3>
                     <p class="little_text">Foco exclusivo nas necessidades e dinâmicas do mercado corporativo.</p>
                 </div>
 
-                <div class="item-diferenciais">
-                    <p class="medium text">Busca <span class="accent">Geográfica</span></p>
-                    <br>
+                <div class="item-diferenciais gap-1rem">
+                    <h3 class="medium text">Busca <span class="accent">Geográfica</span></h3>
+                    
                     <p class="little_text">Encontre talentos e parceiros profissionais próximos ao seu projeto.</p>
                 </div>
 
-            </div>
-            <div class="grid-container">
-
-                <div class="item-diferenciais">
-                    <p class="medium text"><span class="accent">Agenda</span> Integrada</p>
-                    <br>
+                <div class="item-diferenciais gap-1rem">
+                    <h3 class="medium text"><span class="accent">Agenda</span> Integrada</h3>
+                    
                     <p class="little_text">Sincronização centralizada para prestação e execução de serviços.</p>
                 </div>
 
-                <div class="item-diferenciais">
-                    <p class="medium text"><span class="accent">Multiplas</span> Unidades</p>
-                    <br>
+                <div class="item-diferenciais gap-1rem">
+                    <h3 class="medium text"><span class="accent">Multiplas</span> Unidades</h3>
+                    
                     <p class="little_text">Estrutura preparada para gerenciar filiais e demandas complexas.</p>
                 </div>
 
-                <div class="item-diferenciais">
-                    <p class="medium text">Qualificações <span class="accent">Checadas</span></p>
-                    <br>
+                <div class="item-diferenciais gap-1rem">
+                    <h3 class="medium text">Qualificações <span class="accent">Checadas</span></h3>
+                    
                     <p class="little_text">Registro e validação de certificações e competências técnicas.</p>
                 </div>
-                
-            </div>
-            <div class="grid-container">
 
-                <div class="item-diferenciais">
-                    <p class="medium text"><span class="accent">Gestão</span> de Demandas</p>
-                    <br>
+                <div class="item-diferenciais gap-1rem">
+                    <h3 class="medium text"><span class="accent">Gestão</span> de Demandas</h3>
+                    
                     <p class="little_text">Organização eficiente de projetos e requisitos técnicos fotovoltaicos.</p>
                 </div>
 
-                <div class="item-diferenciais">
-                    <p class="medium text">Catálogo <span class="accent">Consolidado</span></p>
-                    <br>
+                <div class="item-diferenciais gap-1rem">
+                    <h3 class="medium text">Catálogo <span class="accent">Consolidado</span></h3>
+                    
                     <p class="little_text">Acesso rápido a equipamentos e especificações do setor.</p>
                 </div>
 
-                <div class="item-diferenciais">
-                    <p class="medium text"><span class="accent">Central</span> de Diálogo</p>
-                    <br>
+                <div class="item-diferenciais gap-1rem">
+                    <h3 class="medium text"><span class="accent">Central</span> de Diálogo</h3>
+                    
                     <p class="little_text">Comunicação direta e centralizada entre todos os envolvidos.</p>
                 </div>
                 
             </div>
+            <p class="contador-pilha little_text">Toque para ver mais •
+                <span id="contador-atual" class="accent">1</span> / <span id="contador-total" class="accent">9</span></p>
         </div>
+        
     </section>
 
     <section id="marketing">
-            <p class="big_text" id="title-marketing">Os elos certos para transformar o<br> seu investimento em resultado.</p>
+        <div class="title-marketing">
+            <h2 class="big_text">Os elos certos para transformar o </h2>
+            <h2 class="big_text">seu investimento em resultado.</h2>
+        </div>
+            
 
             <div>
                 <button class = "button-cadastre-se">
@@ -379,7 +383,7 @@
     </section>
 
     <section id="footer">
-        <div>
+        <div id="logo-container-footer">
 
             <div id="logo-footer">
                 <img src="assets/img/logo_laranja.png">
@@ -391,30 +395,34 @@
             </div>
 
         </div>
-        <div class="grid-container" id="grid-footer">
+        <div class="grid-footer">
 
-            <div>
-                <p class="sub_title">Sobre</p>
-                <br>
-                <a href="#hero" class="text">Sobre a empresa</a>
-                <br><br>
-                <a href="#secao1" class="text">Nossa proposta</a>
+            <div class="flex-column gap-1rem">
+                <h3 class="sub_title">Sobre</h3>
+                <div class="flex-column gap-1rem">
+                    <a href="#hero" class="text">Nossa proposta</a>
+                
+                    <a href="#secao1" class="text">FAQ</a>
+                </div>
+                
             </div>
 
-            <div>
-                <p class="sub_title">Navegação</p>
-                <br>
-                <a href="index.html" class="text">Home</a>
-                <br><br>
-                <a href="index.html#faq" class="text">FAQ</a>
+            <div class="flex-column gap-1rem">
+                <h3 class="sub_title">Navegação</h3>
+                <div class="flex-column gap-1rem">
+                    <a href="index.html" class="text">Home</a>
+                
+                    <a href="index.html#faq" class="text">Portal</a>
+                </div>
             </div>
                 
-            <div>
-                <p class="sub_title">Contatos</p>
-                <br>
-                <a href="index.html" class="text" id="instagram">Instagram</a>
-                <br><br>
-                <a href="index.html#faq" class="text" id="gmail">Gmail</a>
+            <div class="flex-column gap-1rem">
+                <h3 class="sub_title">Contatos</h3>
+                <div class="flex-column gap-1rem">
+                    <a href="index.html" class="text" id="instagram">Instagram</a>
+                    
+                    <a href="index.html#faq" class="text" id="gmail">Gmail</a>
+                </div>
             </div>
 
         </div>
