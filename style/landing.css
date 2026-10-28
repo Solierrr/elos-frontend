@@ -365,12 +365,12 @@ border: 1px solid #56564a;
 .passagem{
     display: flex;
     margin-top: clamp(1rem, 3vw, 1.5rem);
-    flex: 1;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: clamp(0.25rem, 1vw, 0.35rem);
     flex-wrap: wrap;
+    width: 100%;
 }
 
 
@@ -383,6 +383,10 @@ border: 1px solid #56564a;
 
 }
 
+
+
+
+/* Seção 2*/
 .frase_secao2{
     display: flex;
     flex-direction: column;
@@ -758,7 +762,10 @@ border: 1px solid #56564a;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(3rem, 8vw, 7rem) clamp(1rem, 5vw, 3rem) clamp(2rem, 5vw, 4rem);
+    padding: clamp(3rem, 8vw, 4.5rem) clamp(1rem, 5vw, 3rem) clamp(2rem, 5vw, 4rem);
+        --largura-img: 18rem;   
+    --espaco: 0.1rem;
+    --largura-texto: 38rem;
 }
 
 .container_secao7{
@@ -801,7 +808,6 @@ border: 1px solid #56564a;
 .container_frases p{
     line-height: clamp(1.6, 1.5 + 0.3vw, 1.9);
     max-width: min(100%, 38rem);
-    margin: 0;
 }
 .slide, .slide_ativo{
     display: flex;
@@ -813,6 +819,78 @@ border: 1px solid #56564a;
     display: none;
 }
 
+/*  FAQ ----------------------------------- */
+
+.container_FAQ{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--beigeW);
+    padding-top: 3.5rem;
+}
+.frases_FAQ{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+
+    position: relative;
+    margin-block: auto;
+    z-index: 15;
+
+    padding-bottom: 1rem;
+    
+    text-align: center;
+}
+
+.button_contate_nos .text{
+    color: var(--white);
+}
+.button_contate_nos{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--orange);
+    border: none;
+    border-radius: 0.67rem;
+    gap: 0.6rem;
+    width: 10%;
+    height: 7vh;
+    transition: background-color 0.2s;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.button_contate_nos:hover{
+    box-shadow: 0.01rem 0.3rem 0 rgba(0,0,0,0.2);
+    transform: translateY(0.1rem);
+    background-color: var(--dark-orange);
+}
+.container_infos{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 2.5rem;
+    margin-bottom: 10rem;
+}
+
+.quadrado_info{
+    background-color: var(--grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 1rem;
+    width: 42vw;
+    height: 10vh;
+    padding: 1rem;
+    gap: 2rem;
+
+}
+.quadrado_info span{
+    color: rgba(0,0,0,0.55);
+}
 /* Marketing -----------------------------------*/
 #marketing{
     display: flex;
@@ -874,8 +952,7 @@ border: 1px solid #56564a;
 
     min-height: 12rem;
 
-    padding-top: 2rem 1rem 3rem;
-    margin: 2rem 0 0;
+    padding: 3rem;
 }
 
 .grid-footer{
@@ -1106,7 +1183,7 @@ a{
 /*Media Query da seção 7*/
 @media (min-width: 768px){
     #secao7{
-        padding: 7rem 3rem 4rem;
+        padding: 4.5rem 3rem 4rem;
     }
 
     .img_secao7{
@@ -1144,5 +1221,28 @@ a{
     }
     .container_frases p{
         max-width: 38rem;
+    }
+}
+
+
+
+@media (min-width: 1024px){
+    .slide_ativo{
+        gap: var(--espaco);
+    }
+    .img_secao7 img{
+        width: var(--largura-img);
+    }
+    .infos_secao7{
+        max-width: var(--largura-texto);
+    }
+}
+
+@media (min-width: 1024px){
+    .passagem{
+        box-sizing: border-box;
+        max-width: calc(var(--largura-img) + var(--espaco) + var(--largura-texto));
+        margin-inline: auto;                                /* centraliza o bloco todo */
+        padding-left: calc(var(--largura-img) + var(--espaco)); /* pula o celular */
     }
 }
