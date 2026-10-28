@@ -75,11 +75,28 @@ header{
 /* Início e Sobre nós*/
 .navigation_header .text{
     color: var(--white);
+    position: relative;
 }
 .navigation_header a{
     text-decoration: none;
-
 }
+
+.navigation_header .text::after{
+    content: "";    
+    position: absolute;
+    left: 0;
+    bottom: -0.10rem;
+    width: 0;
+    height: 0.125rem;
+    background-color: currentColor;
+    transition: width 0.5s ease-in-out;
+}
+
+.navigation_header .text:hover::after,
+.navigation_header .text:focus-visible::after{
+    width: 100%;
+}
+
 .navigation_header{
     display: flex;
     flex-wrap: wrap;
@@ -291,6 +308,7 @@ border: 1px solid #56564a;
     width: min(100% - 2rem, 80rem);
     margin-inline: auto;
     margin-bottom: 3rem;
+    background-color: var(--beige);
 }
 #secao4{
     width: min(100% - 2rem, 80rem);
@@ -477,6 +495,7 @@ border: 1px solid #56564a;
     display: flex;
     justify-content: center;
     width: 100%;
+    background-color: var(--beigeW);
 }
 
 .grid-container{
@@ -905,6 +924,13 @@ a{
 @media (min-width: 1024px) {
     .hero{
         min-height: 120vh;
+    }
+}
+
+/*Acessibilidade, caso a pessoa não queira movimento*/
+@media (prefers-reduced-motion: reduce){
+    .navigation_header .text::after{
+        transition: none;
     }
 }
 
