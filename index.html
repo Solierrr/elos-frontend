@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
 
+
+    <link rel="shortcut icon" href="assets/icone/logo_branco.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="style/variables.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/text.css">
@@ -17,12 +20,14 @@
             <div class="header_container">
                     <img src="assets/icone/logotipo.svg" alt="Logo">
                 <div class = "divisor"></div>
-                <nav class="navigation">
+                <nav class="navigation_header"> 
                      <a href="" class = "text">Início</a>
+                </nav>
+                <nav class = "navigation_header">
                     <a href="" class = "text">Sobre nós</a>
                 </nav>
                 <div class = "pesquisa">
-                    <img src="assets/icone/lupa.svg" alt="ícone de Lupa" class="lupa">
+                    <img src="assets/icone/lupa.svg" alt="ícone de Lupa" class="lupa" aria-label = "Barra de pesquisa.">
                     <input type="text" 
                     placeholder=""  id ="caixa_pesquisa"  >
                 </div>
@@ -38,8 +43,11 @@
         </header>
         <div class = "destaque_hero">
             <div class =  "frase_hero">
-                <p class = "big_text">Um elo entre<br>comprador e fornecedor</p>
-                <p class = "sub_title">Equipamentos fotovoltaicos adaptados a cada<br> necessidade e escala de consumo.</p>
+                <p class = "big_text">Um elo entre</p>
+                    <p class = "big_text espacamento">comprador e fornecedor</p>
+                <p class = "sub_title">A intermediação entre empresas e setores fotovoltaicos,</p>
+                <p class = "sub_title"> com a solução adequada a cada escala</p>
+
             </div>
                 <button class = "button_saiba" type="button" aria-label = "Saiba mais sobre a empresa">
                     <span class = "little_title">Saiba mais!</span>
@@ -52,53 +60,88 @@
     </section>
 
     <section id = "secao1">
+        <div class = "frase_secao1">
         <p class = "big_text">Explore nossos objetivos!</p>
-        <div class = "carrosselS1">
-            <div class = "busca_G">
-                <img src="assets/img/imgBG.png" alt = "Uma busca geográfica." class = "img_BG">
-                <div class = "infos_BG">
+        </div>
+        <div class = "carrossel">
+            <div class = "busca_G slide_ativo">
+                <img src="assets/img/busca_geografica.jpg" alt = "Uma busca geográfica." class = "img_BG">
+                <div class = "infos_carrossel">
                     <p class = "sub_title">Busca Geográfica</p>
                     <p class = "text"> Encontre empresas e técnicas especializadas em instalação de painéis solares na sua região.</p>
                 </div>
             </div>
 
-            <div class = "divulgacao">
-                <img src = "assets/img/imgD.png" alt = "Um homem pesquisando sobre divulgação de produtos." class = "img_D">
-                <div class = "infos_D">
+            <div class = "divulgacao slide">
+                <img src = "assets/img/divulgacao.jpg" alt = "Um homem pesquisando sobre divulgação de produtos." class = "img_D">
+                <div class = "infos_carrossel">
                     <p class = "sub_title">Divulgação</p>
                     <p class = "text">Conheça publicações sobre empresas técnicas, perfis de profissionais e outras informações relevantes do setor.</p>
                 </div>
             </div>
 
-            <div class = "comunicacao">
-                <img src = "assets/img/imgC.png" alt = "Pessoas se comunicando." class = "img_C">
-                <div class = "infos_C">
+            <div class = "comunicacao slide">
+                <img src = "assets/img/comunicacao.jpg" alt = "Pessoas se comunicando." class = "img_C">
+                <div class = "infos_carrossel">
                     <p class = "sub_title">Comunicação</p>
                     <p class = "text">Utilize o nosso chat para conversar diretamente com fornecedores e técnicos.</p>
                 </div>
             </div>
 
-            <div class = "oportunidades">
-                <img src = "assets/img/imgO.png" alt = "Oportunidades de negócio, sendo mostrada com uma chave e dinheiro ao fundo." class = "img_O">
-                <div class = "infos_O">
+            <div class = "oportunidades slide">
+                <img src = "assets/img/oportunidades.jpg" alt = "Oportunidades de negócio, sendo mostrada com uma chave e dinheiro ao fundo." class = "img_O">
+                <div class = "infos_carrossel">
                     <p class = "sub_title">Oportunidades</p>
                     <p class = "text">Descubra as melhores condições e ofertas para instalação de painéis solares oferecidas por empresas técnicas.</p>
                 </div>
             </div>
         </div>
         <div class = "passagem">
-        <button class = "quadrado1" type="button" aria-label = "Ir para o primeiro carrossel"></button>
-        <button class = "quadrado2" type="button" aria-label = "Ir para o segundo carrossel"></button>
+        <button class = "quadrado" type="button" role = "group" aria-label = "Ir para o primeiro carrossel"></button>
+        <button class = "quadrado" type="button" aria-label = "Ir para o segundo carrossel"></button>
+        <button class = "quadrado" type="button" role= "group" aria-label = "Ir para o terceiro carrossel"></button>
+        <button class = "quadrado" type="button" aria-label = "Ir para o quarto carrossel"></button>
         </div>
     </section>
+
     <section id = "secao2">
-        <p class = "big_text">Conheça mais sobre nós!</p>
+        <div class = "informacoes">
+
+            <div class = "frase_secao2">
+                <p class = "big_text">Conheça mais sobre nós!</p>
+            <p class = "title"><span class = "accent">Benefícios</span> que o Elos trará a você</p>
+        </div>
+
+        <div class = "informacao1_secao2">
+            <div class = "instalacao">
+                <img src = "assets/icone/engrenagem.svg" alt = "Ícone de engrenagem" class = "icone_engrenagem">
+                <p class = "sub_title">Instalação em múltiplas filais</p>
+                <img src = "assets/icone/setaPBaixo.svg" alt = "Ícone de seta" class = "icone_seta">
+            </div>
+        </div>
+
+               <div class = "informacao2_secao2">
+            <div class = "tecnicos">
+                <img src = "assets/icone/pessoas.svg" alt = "Ícone de pessoas" class = "icone_pessoas">
+                <p class = "sub_title">Técnicos especializados</p>
+                <img src = "assets/icone/setaPBaixo.svg" alt = "Ícone de seta" class = "icone_seta">
+            </div>
+        </div>
+        <div class = "informacao3_secao2">
+            <div class = "ofertas">
+                <img src = "assets/icone/carrinho.svg" alt = "Ícone de carrinho" class = "icone_carrinho">
+                <p class = "sub_title">Ofertas únicas</p>
+                <img src = "assets/icone/setaPBaixo.svg" alt = "Ícone de seta" class = "icone_seta">
+            </div>
+        </div>
+    </div>
     </section>
+
     <section id="secao3">
         <div class="grid-container">
             <div>
                 <div class="card-imagem-secao3" id="gerenciamento-secao3">
-                    <p class="title">Serviços técnicos</p></div>
+                    <p class="title">Gerenciamento</p></div>
                 <div class="card-texto-secao3">
                     <p class="text">Gerencie, de forma centralizada, todas as unidades e demandas da sua empresa com controle e agilidade.</p>
                 </div>
@@ -121,44 +164,329 @@
             </div>
         </div>
     </section>
-
-    <section id="secao5">
-        <div>
-            <div>
-                <p class="big_text">Agora também temos <span class=highlight_text>fornecedores!</span></p>
-                <p class="sub_title">Ampliamos nossa atuação para gerar ainda mais valor</p>
-                <p class="text">Nosso aplicativo abrange:</p>
+    
+    <section id = "secao4">
+        <div class = "frase_secao1">
+            <p class = "title">Transforme sua <span class = "accent">economia</span> com energia solar!</p>
+        </div>
+        <div class = "carrossel">
+            <div class = "vida_util slide_ativo">
+                <img src="assets/img/vida_util.jpg" alt = "Foto de painéis solares." class = "img_carrossel">
+                <div class = "infos_carrossel">
+                    <p class = "sub_title">Vida útil</p>
+                    <p class = "text">Conte com painéis solares que possuem vida útil média de aproximadamente trinta anos.</p>
+                </div>
             </div>
-            <div class="atuacoes-fornecedores-secao5">
+
+            <div class = "payback slide">
+                <img src = "assets/img/payback.jpg" alt = "Imagem de uma pessoa guardando dinheiro" class = "img_carrossel">
+                <div class = "infos_carrossel">
+                    <p class = "sub_title">Payback</p>
+                    <p class = "text">Obtenha retorno financeiro em prazo determinado, calculado a partir da instalação do painel solar.</p>
+                </div>
+            </div>
+
+            <div class = "sustentavel slide">
+                <img src = "assets/img/sustentavel.jpg" alt = "Pessoas andando por uma paisagem florida." class = "img_carrossel">
+                <div class = "infos_carrossel">
+                    <p class = "sub_title">Sustentável</p>
+                    <p class = "text">Promova o uso equilibrado e responsável dos recursos naturais.</p>
+                </div>
+            </div>
+
+            <div class = "renovavel slide">
+                <img src = "assets/img/renovavel.jpg" alt = "Fotos de painéis fotovoltaicos, que são um tipo de energia renovável" class = "img_O">
+                <div class = "infos_carrossel">
+                    <p class = "sub_title">Renovável</p>
+                    <p class = "text">Utilize energia solar, uma fonte capaz de se regenerar naturalmente.</p>
+                </div>
+            </div>
+        </div>
+        <div class = "passagem">
+            <button class = "quadrado" type="button" role= "group" aria-label = "Ir para o primeiro carrossel"></button>
+            <button class = "quadrado" type="button" aria-label = "Ir para o segundo carrossel"></button>
+            <button class = "quadrado" type="button" role= "group" aria-label = "Ir para o terceiro carrossel"></button>
+            <button class = "quadrado" type="button" aria-label = "Ir para o quarto carrossel"></button>
+        </div>
+    </section>
+
+    <section id = "secao5">
+        <div id = "container_secao5">
+            <img src = "assets/img/img_secao5.jpg">
+            <div class = "frase_secao5">
+                <p class = "title">Como a energia solar muda a sua vida</p>
+                <div class = "titulo_secao5">
+                <p class = "text">
+                        Em 2023, um sistema fotovoltaico em Franca (SP) com 220 painéis reduziu o gasto mensal de energia de <span class = "accent_white">R$6.500,00</span> para <span class = "accent_white">R$1.600,00.</span>
+                    </p>
+                    <p class = "text">Gerando economia de <span class = "accent_white">R$4.900,00</span> por mês e retorno do investimento em cerca de <span class = "accent_white">8,5</span> anos.</p>
+                    <p class = "little_text">Observação: valores baseados no <span class = "accent_white">caso específico</span>; o retorno pode variar conforme tarifa e perfil de consumo de cada cliente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="secao6">
+        <div>
+            <div class="texto-secao6">
+                <p class="big_text">Agora também temos <span class="accent">fornecedores!</span></p>
                 <div>
-                    <div class="caixa-abrange-fornecedor">
-                        <p class="text">Fabricantes</p>
-                    </div>
-                    <div class="caixa-abrange-fornecedor">
-                        <p class="text">Distribuidores</p>
-                    </div>
-                    <div class="caixa-abrange-fornecedor">
-                        <p class="text">Revendedores</p>
-                    </div>
-                    <div class="caixa-abrange-fornecedor">
-                        <p class="text">Parceiros</p>
-                    </div>
-                    <div class="caixa-abrange-fornecedor">
-                        <p class="text">Profissionais independentes</p>
-                    </div>
-                    <div class="caixa-abrange-fornecedor">
-                        <p class="text">Profissionais de empresas</p>
-                    </div>
-                    <div class="caixa-abrange-fornecedor">
-                        <p class="text">Empresas tecnicas especializadas</p>
+                    <p class="sub_title">Ampliamos nossa atuação para gerar ainda mais valor</p>
+                    <p class="text">Nosso aplicativo abrange:</p>
+                </div>
+            </div>
+            <div class="atuacoes-fornecedores-secao6">
+                <div class="janela-secao6">
+                    <div class="caixas-secao6">
+                        <div class="caixa-abrange-fornecedor">
+                            <p class="text">Fabricantes</p>
+                        </div>
+                        <div class="caixa-abrange-fornecedor">
+                            <p class="text">Distribuidores</p>
+                        </div>
+                        <div class="caixa-abrange-fornecedor">
+                            <p class="text">Revendedores</p>
+                        </div>
+                        <div class="caixa-abrange-fornecedor">
+                            <p class="text">Parceiros</p>
+                        </div>
+                        <div class="caixa-abrange-fornecedor">
+                            <p class="text">Profissionais independentes</p>
+                        </div>
+                        <div class="caixa-abrange-fornecedor">
+                            <p class="text">Profissionais de empresas</p>
+                        </div>
+                        <div class="caixa-abrange-fornecedor">
+                            <p class="text">Empresas tecnicas especializadas</p>
+                        </div>
                     </div>
                 </div>
-                <div class="imagem-atuacao-secao5">
-                    <img src="assets/img/imgFornecedor.jpg"
+                <div class="imagem-atuacao-secao6">
+                    <img src="assets/img/img_fornecedor_secao6.jpeg" alt="Imagem de um tecnico eletricista em cima de uma placa solar">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+<section id="secao7">
+        <div class = "container_secao7">
+            <h2 class="big_text">Conheça nossas <span class="accent">funcionalidades!</span></h2>
+            
+            <div class = "slide_ativo">
+                <div class = "img_secao7">
+                    <img src = "assets/img/celular.png" alt = "Tela do app Elos mostrando a funcionalidade de gerenciamento de carga horária.">
+                </div>
+                    
+                <div class = "infos_secao7">
+                    <h3 class = "title"><span class ="accent">Gerenciamento</span> da carga horária</h3>
+                    
+                    <div class = "container_frases">
+                        
+                        <p class = "little_title">Fornecedores independentes, utilizem a nossa agenda para otimizar o seu tempo. Marque os seus <span class = "accent">compromissos</span> de acordo com a data que você quer, navegando de forma simples pelo calendário, mês a mês.</p>
+                        
+                        
+                        <p class = "little_title">Você ainda pode personalizar a sua jornada, conectar o <span class = "accent">Google Agenda</span> e ajustar as configurações do jeito que preferir.</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class = "slide">
+                <div class = "img_secao7">
+                    <img src = "assets/img/celular1.png" alt = "Tela do app Elos mostrando a funcionalidade de chat para a organização.">
+                </div>
+                    
+                <div class = "infos_secao7">
+                    <h3 class = "title"><span class ="accent">Chat</span> para organização</h3>
+                    
+                    <div class = "container_frases">
+                        
+                        <p class = "little_title">Utilize o chat para marcar visitas técnicas, <span class = "accent">negociar</span>, falar com clientes e empresas técnicas, tudo em uma conversa simples e direta, <span class = "accent">sem sair</span> do aplicativo.</p>
+                        
+                        <p class = "little_title">Você pode enviar mensagens, compartilhar links, usar o áudio quando preferir e acompanhar o histórico das suas conversas para manter tudo organizado.</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class = "slide">
+                <div class = "img_secao7">
+                    <img src = "assets/img/celular2.png" alt = "Tela do app Elos mostrando a funcionalidade de seleção de projetos.">
+                </div>
+                    
+                <div class = "infos_secao7">
+                    <h3 class = "title"><span class ="accent">Seleção</span> de projeto</h3>
+                    
+                    <div class = "container_frases">
+                       
+                            <p class = "little_title">Fornecedores, selecionem os projetos nos quais você quer trabalhar, escolhendo a empresa e o local que são mais<span class = "accent"> próximos</span>.</p>
+
+
+                            <p class = "little_title">Além de buscar um projeto pelo nome e percorrer a lista de forma <span class = "accent">simples</span>, vendo a empresa e a região de cada um logo de cara.</p>
+                            
+                        </div>
+                    </div>
+            </div>
+
+            <div class = "slide">
+                <div class = "img_secao7">
+                    <img src = "assets/img/celular3.png" alt = "Tela do app Elos mostrando a funcionalidade de localização de projetos próximos">
+                </div>
+                    
+                <div class = "infos_secao7">
+                    <h3 class = "title"><span class ="accent">Localização</span> de projetos próximos</h3>
+                    
+                    <div class = "container_frases">
+                       
+                            <p class = "little_title">Através da nossa <span class = "accent">busca geográfica</span>, é possível que os fornecedores encontrem onde há projetos disponíveis para o seu local de trabalho, vendo tudo direto no mapa.</p>
+
+
+                            <p class = "little_title">Além de conseguir abrir o endereço no <span class = "accent">Google Maps</span> ou salvar o local para consultar depois. </p>
+                            
+                        </div>
+                    </div>
+            </div>
+
+            <div class = "slide">
+                <div class = "img_secao7">
+                    <img src = "assets/img/celular4.png" alt = "Tela do app Elos mostrando a funcionalidade do perfil do usuário.">
+                </div>
+                    
+                <div class = "infos_secao7">
+                    <h3 class = "title"><span class ="accent">Perfil</span> do usuário.</h3>
+                    
+                    <div class = "container_frases">
+                       
+                            <p class = "little_title">No perfil do usuário, você encontra <span class = "accent">informações</span> pessoais, além da profissão, e pode adicionar a pessoa como conexão, gerando a sua <span class = "accent">confiança</span> antes da negociação.</p>
+
+
+                            <p class = "little_title">Além de conseguir ver a agenda, iniciar uma conversa e compartilhar o perfil com quem quiser. </p>
+                            
+                        </div>
+                    </div>
+            </div>
+
+            
+                <div class = "passagem" role = "group" aria-label = "Escolha a funcionalidade.">
+                    <button class = "quadrado" type="button" aria-label = "Ir para o primeiro carrossel"></button>
+                    <button class = "quadrado" type="button" aria-label = "Ir para o segundo carrossel"></button>
+                    <button class = "quadrado" type = "button" aria-label = "Ir para o terceiro carrossel"></button>
+                    <button class = "quadrado" type = "button" aria-label = "Ir para o quarto carrossel"></button>
+                    <button class = "quadrado" type = "button" aria-label = "Ir para o quinto carrossel"></button>
+                </div>
+        </div>
+    </section>
+
+    <section id = "FAQ">
+        <div class = "container_FAQ">
+            <div class = "frases_FAQ">
+                <h2 class = "title">Perguntas frequentes</h2>
+                <h3 class = "sub_title">Tem perguntas? Nos contate.</h3>
+            </div>
+            <button class = "button_contate_nos" type = "button" arial-label = "Contate-nos">
+                <span class = "text">Contate-nos</span>
+            </button>
+
+            <div class = "container_infos">
+
+
+                    <div class = "quadrado_info">
+                        <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
+                        <span class = "sub_title">O que é o Elos?</span>
+                        <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
+                    </div>
+
+                <div class = "quadrado_info">
+                    <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
+                    <span class = "sub_title">Como é o processo de instalação?</span>
+                    <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
+                </div>
+
+                <div class = "quadrado_info">
+                    <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
+                    <span class = "sub_title">Quais são os tipos de placas solares?</span>
+                    <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
+                </div>
+
+                <div class = "quadrado_info">
+                    <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
+                    <span class = "sub_title">A manutenção tem que ser frequente?</span>
+                    <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
+                </div>
+
+                <div class = "quadrado_info">
+                    <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
+                    <span class = "sub_title">O que o Elos não faz?</span>
+                    <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
+                </div>
+
+            </div>
+        </div>
+    </section>
+                
+
+        </div>
+    </section>
+        <section id="marketing">
+        <div class="title-marketing">
+            <h2 class="big_text">Os elos certos para transformar o </h2>
+            <h2 class="big_text">seu investimento em resultado.</h2>
+        </div>
+            
+
+            <div>
+                <button class = "button-cadastre-se">
+                    <span class = "sub_title">Cadastrar</span>
+                </button>
+            </div>
+    </section>
+
+    <section id="footer">
+        <div id="logo-container-footer">
+
+            <div id="logo-footer">
+                <img src="assets/icone/logo_laranja.svg">
+            </div>  
+
+            <div>
+                <p class="little_title" id="slogan-footer">Compra, manutenção,<br> históricos, <b>tudo</b> aqui.</p>
+            </div>
+
+        </div>
+        <div class="grid-footer">
+
+            <div class="flex-column gap-1rem">
+                <h3 class="sub_title">Sobre</h3>
+                <div class="flex-column gap-1rem">
+                    <a href="#hero" class="text">Nossa proposta</a>
+                
+                    <a href="#secao1" class="text">FAQ</a>
+                </div>
+                
+            </div>
+
+            <div class="flex-column gap-1rem">
+                <h3 class="sub_title">Navegação</h3>
+                <div class="flex-column gap-1rem">
+                    <a href="index.html" class="text">Home</a>
+                
+                    <a href="index.html#faq" class="text">Portal</a>
+                </div>
+            </div>
+                
+            <div class="flex-column gap-1rem">
+                <h3 class="sub_title">Contatos</h3>
+                <div class="flex-column gap-1rem">
+                    <a href="index.html" class="text" id="instagram">Instagram</a>
+                    
+                    <a href="index.html#faq" class="text" id="gmail">Gmail</a>
                 </div>
             </div>
 
         </div>
     </section>
+
+    <script src="js/landing.js" defer></script>
 </body>
 </html>
