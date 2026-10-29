@@ -1,5 +1,9 @@
 @import url('variables.css');
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: var(--light-grey);
 }
@@ -79,6 +83,10 @@ header{
 }
 
 /* Início e Sobre nós*/
+.logo-header{
+    padding-right: 1rem;
+}
+
 .navigation .text{
     color: var(--white);
 }
@@ -89,41 +97,9 @@ header{
 .navigation{
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
     cursor: pointer;
-}
-/* Caixa de pesquisa personalização*/
-.pesquisa{
-    position: relative;
-    flex: 1 1 10rem;
-
-    max-width: 18rem;
-    min-width: 0;
-}
-#caixa_pesquisa{
-    background-color:rgba(88,109,98,0.6);
-    border-radius: 0.8rem;
-    width: 100%;
-    padding: 0.5rem 1rem 0.5rem 2.6rem;
-    border: none;
-    color: var(--white);
-    font-size: 1rem;
-    outline: none;
-}
-
-/*acessibilidade para teclado*/
-#caixa_pesquisa:focus-visible{
-    outline: 2px solid var(--white);
-    outline-offset: 2px;
-}
-
-
-.lupa{
-    position: absolute;
-    top: 50%;
-    left: 1rem;
-    transform: translateY(-50%);
-    pointer-events: none;
+    padding: 0 1rem;
 }
 
 /* Botões personalização*/
