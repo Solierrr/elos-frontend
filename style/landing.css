@@ -1,4 +1,4 @@
-/* Classes gerais de assistencia*/
+/*=============================== Classes gerais de assistencia ===============================*/
 
 .flex-row{
     display: flex;
@@ -21,7 +21,7 @@
     gap: 2rem;
 }
 
-/* Hero personalização*/
+/*=============================== Hero personalização ===============================*/
 .hero{
     background-image: url("../assets/img/imgHero.jpg");
     background-size: cover;
@@ -63,7 +63,7 @@
 }
 
 
-/* Header personalização*/
+/*=============================== Header personalização ===============================*/
 
 header{
     position: fixed;
@@ -136,7 +136,7 @@ header{
     pointer-events: none;
 }
 
-/* Botões personalização*/
+/*=============================== Botões personalização ===============================*/
 .buttons_header{
     display: flex;
     flex-wrap: wrap;
@@ -223,7 +223,7 @@ border: 1px solid #56564a;
 }
 
 
-/*Frase do Hero*/
+/*===============================Frase do Hero ===============================*/
 
 .destaque_hero{
     display: flex;
@@ -236,7 +236,7 @@ border: 1px solid #56564a;
     z-index: 15;
 
     padding-top: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 6rem;
 }
 
 .frase_hero{
@@ -244,20 +244,25 @@ border: 1px solid #56564a;
     flex-direction: column;
     align-items: center;
     gap: 0.4rem;
+    margin-bottom: 0.9rem;
 
     width: fit-content;
 }
 .frase_hero .sub_title{
     color: var(--white);
-    text-align: center;
     line-height: 1.4;
+    text-align: center;
+}
+
+
+.frase_hero .espacamento{
+    padding-bottom: 1rem;
 }
 
 .frase_hero .big_text{
     color: var(--white);
     text-align: center;
     line-height: 1;
-
 }
 .button_saiba{
     position: relative;
@@ -288,7 +293,7 @@ border: 1px solid #56564a;
     background-color: var(--dark-orange);
 }
 
-/*Divisão */
+/*===== Divisão =====*/
 #divisao_arco{
     fill: var(--beige);
     width: 100%;
@@ -302,6 +307,7 @@ border: 1px solid #56564a;
     /*Colocar o arco*/
 
 }
+/*=============================== Carrossel seção 1 e 4 ===============================*/
 
 #secao1{
     width: min(100% - 2rem, 80rem);
@@ -314,26 +320,36 @@ border: 1px solid #56564a;
     margin-inline: auto;
     margin-bottom: 3rem;
 }
-/*Carrossel seção 1*/
+
 .carrossel{
+    --gap: 2rem;
     display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-}
-
-/* para retirar a barra de rolagem do próprio navegador, como chrome*/
-.carrossel::-webkit-scrollbar{
-    display: none;
+    gap: var(--gap);
+    width: 100%;
+    align-items: center;
 }
 
 /*utilizar no celular, para passar um por vez*/
 .carrossel > *{
     flex: 0 0 100%;
-    scroll-snap-align: start;
 }
+
+.carrossel .slide_ativo{
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.carrossel .slide_ativo > *{
+    width: 100%;
+}
+
+.carrossel > .slide_ativo{
+    align-self: flex-start;
+    justify-content: flex-start;
+}
+
 /*para a imagem acompanhar o tamanho*/
 .carrossel img{
     display: block;
@@ -361,6 +377,47 @@ border: 1px solid #56564a;
     padding-inline: 1rem;
 }
 
+.carrossel{
+    --brilho-escuro: 0.65; /* na seção 7 é 0.35. 1 = sem escurecer */
+}
+
+.quadrado[hidden]{
+    display: none;
+}
+
+/* Roteiros só do carrossel (iguais aos da seção 7, mas menos escuros) */
+@keyframes carrossel-imagem-entra{
+from{ filter: brightness(var(--brilho-escuro)); transform: scale(0.96); }
+    to{   filter: brightness(1);                    transform: scale(1); }
+}
+@keyframes carrossel-imagem-sai{
+    to{ filter: brightness(var(--brilho-escuro)); transform: scale(0.96); }
+}
+@keyframes carrossel-texto-entra{
+    from{ opacity: 0; transform: translateY(1rem); }
+    to{   opacity: 1; transform: translateY(0); }
+}
+@keyframes carrossel-texto-sai{
+    to{ opacity: 0; transform: translateY(-0.5rem); }
+}
+
+/* Entrada: mesmos tempos da seção 7 */
+.carrossel .slide_ativo img{
+    animation: carrossel-imagem-entra 1.2s ease-in both;
+}
+
+.carrossel .slide_ativo .infos_carrossel{
+    animation: carrossel-texto-entra 1s ease-in 0.2s both;
+}
+
+/* Saída */
+.carrossel .slide_ativo.saindo img{
+    animation: carrossel-imagem-sai 1.2s ease-out forwards;
+}
+.carrossel .slide_ativo.saindo .infos_carrossel{
+    animation: carrossel-texto-sai 1.5s ease-out forwards;
+}
+
 .passagem{
     display: flex;
     margin-top: clamp(1rem, 3vw, 1.5rem);
@@ -383,9 +440,7 @@ border: 1px solid #56564a;
 }
 
 
-
-
-/* Seção 2*/
+/*=============================== Seção 2 ===============================*/
 .frase_secao2{
     display: flex;
     flex-direction: column;
@@ -1060,6 +1115,8 @@ a{
     color: black;
 }
 
+/*========================================MEDIA QUERY =========================================*/
+
 /* Seção 1*/
 @media (min-width: 1024px) {
     .hero{
@@ -1074,12 +1131,6 @@ a{
     }
 }
 
-.carrossel{
-  --gap: 2rem;           
-  gap: var(--gap);
-}
-
-
 @media (min-width: 768px) {
   .carrossel > * {
     flex-basis: calc((100% - var(--gap)) / 2);
@@ -1090,6 +1141,21 @@ a{
   .button_saiba {
     padding: 0.8rem 2rem; 
   }
+}
+
+@media (min-width: 1024px){
+    #secao7 .slide_ativo{
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--espaco);
+    }
+
+    #secao7 .passagem{
+        box-sizing: border-box;
+        max-width: calc(var(--largura-img) + var(--espaco) + var(--largura-texto));
+        margin-inline: auto;
+        padding-left: calc(var(--largura-img) + var(--espaco));
+    }
 }
 
 /*Seção 3*/
