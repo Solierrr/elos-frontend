@@ -27,7 +27,7 @@
                     <a href="" class = "text">Sobre nós</a>
                 </nav>
                 <div class = "pesquisa">
-                    <img src="assets/icone/lupa.svg" alt="ícone de Lupa" class="lupa">
+                    <img src="assets/icone/lupa.svg" alt="ícone de Lupa" class="lupa" aria-label = "Barra de pesquisa.">
                     <input type="text" 
                     placeholder=""  id ="caixa_pesquisa"  >
                 </div>
@@ -46,7 +46,7 @@
                 <p class = "big_text">Um elo entre</p>
                     <p class = "big_text">comprador e fornecedor</p>
                 <p class = "sub_title">A intermediação entre empresas.</p>
-                <p class = "sub_title">e fornecedores fotovoltaicos, com a solução</p>
+                <p class = "sub_title">e setores fotovoltaicos, com a solução</p>
                 <p class = "sub_title">adequada a cada escala</p>
 
             </div>
@@ -263,45 +263,46 @@
                 </div>
             </div>
         </div>
-        </section>
-
-
+    </section>
+    
+    
 <section id="secao7">
         <div class = "container_secao7">
             <h2 class="big_text">Conheça nossas <span class="accent">funcionalidades!</span></h2>
-
+            
             <div class = "slide_ativo">
                 <div class = "img_secao7">
                     <img src = "assets/img/celular.png" alt = "Tela do app Elos mostrando a funcionalidade de gerenciamento de carga horária.">
+                </div>
                     
                 <div class = "infos_secao7">
                     <h3 class = "title"><span class ="accent">Gerenciamento</span> da carga horária</h3>
                     
                     <div class = "container_frases">
-                       
-                            <p class = "little_title">Fornecedores independentes, utilizem a nossa agenda para otimizar o seu tempo. Marque os seus <span class = "accent">compromissos</span> de acordo com a data que você quer, navegando de forma simples pelo calendário, mês a mês.</p>
-
-
-                            <p class = "little_title">Você ainda pode personalizar a sua jornada, conectar o <span class = "accent">Google Agenda</span> e ajustar as configurações do jeito que preferir.</p>
-                            
-                        </div>
+                        
+                        <p class = "little_title">Fornecedores independentes, utilizem a nossa agenda para otimizar o seu tempo. Marque os seus <span class = "accent">compromissos</span> de acordo com a data que você quer, navegando de forma simples pelo calendário, mês a mês.</p>
+                        
+                        
+                        <p class = "little_title">Você ainda pode personalizar a sua jornada, conectar o <span class = "accent">Google Agenda</span> e ajustar as configurações do jeito que preferir.</p>
+                        
                     </div>
+                </div>
             </div>
 
             <div class = "slide">
                 <div class = "img_secao7">
                     <img src = "assets/img/celular1.png" alt = "Tela do app Elos mostrando a funcionalidade de chat para a organização.">
+                </div>
                     
                 <div class = "infos_secao7">
                     <h3 class = "title"><span class ="accent">Chat</span> para organização</h3>
                     
                     <div class = "container_frases">
-                       
-                            <p class = "little_title">Utilize o chat para marcar visitas técnicas, <span class = "accent">negociar</span>, falar com clientes e empresas técnicas, tudo em uma conversa simples e direta, <span class = "accent">sem sair</span> do aplicativo.</p>
-
-                            <p class = "little_title">Você pode enviar mensagens, compartilhar links, usar o áudio quando preferir e acompanhar o histórico das suas conversas para manter tudo organizado.</p>
-                            
-                        </div>
+                        
+                        <p class = "little_title">Utilize o chat para marcar visitas técnicas, <span class = "accent">negociar</span>, falar com clientes e empresas técnicas, tudo em uma conversa simples e direta, <span class = "accent">sem sair</span> do aplicativo.</p>
+                        
+                        <p class = "little_title">Você pode enviar mensagens, compartilhar links, usar o áudio quando preferir e acompanhar o histórico das suas conversas para manter tudo organizado.</p>
+                        
                     </div>
                 </div>
             </div>
@@ -309,6 +310,7 @@
             <div class = "slide">
                 <div class = "img_secao7">
                     <img src = "assets/img/celular2.png" alt = "Tela do app Elos mostrando a funcionalidade de seleção de projetos.">
+                </div>
                     
                 <div class = "infos_secao7">
                     <h3 class = "title"><span class ="accent">Seleção</span> de projeto</h3>
@@ -322,12 +324,12 @@
                             
                         </div>
                     </div>
-                </div>
             </div>
 
             <div class = "slide">
                 <div class = "img_secao7">
                     <img src = "assets/img/celular3.png" alt = "Tela do app Elos mostrando a funcionalidade de localização de projetos próximos">
+                </div>
                     
                 <div class = "infos_secao7">
                     <h3 class = "title"><span class ="accent">Localização</span> de projetos próximos</h3>
@@ -341,12 +343,12 @@
                             
                         </div>
                     </div>
-                </div>
             </div>
 
             <div class = "slide">
                 <div class = "img_secao7">
                     <img src = "assets/img/celular4.png" alt = "Tela do app Elos mostrando a funcionalidade do perfil do usuário.">
+                </div>
                     
                 <div class = "infos_secao7">
                     <h3 class = "title"><span class ="accent">Perfil</span> do usuário.</h3>
@@ -360,18 +362,16 @@
                             
                         </div>
                     </div>
-                </div>
             </div>
 
             
-                <div class = "passagem">
-                    <button class = "quadrado" type="button" onclick="ativar(0)" aria-label = "Ir para o primeiro carrossel"></button>
+                <div class = "passagem" role = "group" aria-label = "Escolha a funcionalidade.">
+                    <button class = "quadrado" type="button" aria-label = "Ir para o primeiro carrossel"></button>
                     <button class = "quadrado" type="button" aria-label = "Ir para o segundo carrossel"></button>
                     <button class = "quadrado" type = "button" aria-label = "Ir para o terceiro carrossel"></button>
                     <button class = "quadrado" type = "button" aria-label = "Ir para o quarto carrossel"></button>
                     <button class = "quadrado" type = "button" aria-label = "Ir para o quinto carrossel"></button>
                 </div>
-            </div>
         </div>
     </section>
 
@@ -484,6 +484,6 @@
         </div>
     </section>
 
-    <script scr="js/landing.js"></script>
+    <script src="js/landing.js" defer></script>
 </body>
 </html>
