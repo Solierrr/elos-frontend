@@ -22,7 +22,7 @@
 }
 
 /*=============================== Hero personalização ===============================*/
-.hero{
+#hero{
     background-image: url("../assets/img/imgHero.jpg");
     background-size: cover;
     background-position: center bottom;
@@ -46,7 +46,7 @@
     padding-bottom: calc(var(--altura-arco) + 2rem);
 }
 
-.hero::before{
+#hero::before{
     content: '';
     background: linear-gradient(
         to top,
@@ -103,39 +103,23 @@ header{
     gap: 1rem;
     cursor: pointer;
 }
-/* Caixa de pesquisa personalização*/
-.pesquisa{
-    position: relative;
-    flex: 1 1 10rem;
 
-    max-width: 18rem;
-    min-width: 0;
-}
-#caixa_pesquisa{
-    background-color:rgba(88,109,98,0.6);
-    border-radius: 0.8rem;
-    width: 100%;
-    padding: 0.5rem 1rem 0.5rem 2.6rem;
-    border: none;
-    color: var(--white);
-    font-size: 1rem;
-    outline: none;
-}
-/*acessibilidade para teclado*/
-#caixa_pesquisa:focus-visible{
-    outline: 2px solid var(--white);
-    outline-offset: 2px;
+/*=============================== Animação de scroll ===============================*/
+.reveal{
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    /* cada item espera um pouco mais que o anterior (máx. 0.9s) */
+    transition-delay: min(calc(var(--i, 0) * 150ms), 900ms);
+    will-change: opacity, transform;
 }
 
-
-.lupa{
-    position: absolute;
-    top: 50%;
-    left: 1rem;
-    transform: translateY(-50%);
-    pointer-events: none;
+.reveal.visivel{
+    opacity: 1;
+    transform: none;
 }
-
 /*=============================== Botões personalização ===============================*/
 .buttons_header{
     display: flex;
@@ -403,11 +387,11 @@ from{ filter: brightness(var(--brilho-escuro)); transform: scale(0.96); }
 
 /* Entrada: mesmos tempos da seção 7 */
 .carrossel .slide_ativo img{
-    animation: carrossel-imagem-entra 1.2s ease-in both;
+    animation: carrossel-imagem-entra 1s ease-in both;
 }
 
 .carrossel .slide_ativo .infos_carrossel{
-    animation: carrossel-texto-entra 1s ease-in 0.2s both;
+    animation: carrossel-texto-entra 0.6s ease-in 0.2s both;
 }
 
 /* Saída */
@@ -678,8 +662,7 @@ from{ filter: brightness(var(--brilho-escuro)); transform: scale(0.96); }
     display: block;
 }
 
-/* seção 6 --------------------------*/
-
+/*=============================== Seção 6 ===============================*/
 #secao6{
     display: flex;
     align-items: center;
@@ -808,8 +791,7 @@ from{ filter: brightness(var(--brilho-escuro)); transform: scale(0.96); }
     }
 }
 
-
-/*Seção 7*/
+/*=============================== Seção 7 ===============================*/
 
 #secao7{
     background-color: var(--beige);  
@@ -937,7 +919,7 @@ from{ filter: brightness(var(--brilho-escuro)); transform: scale(0.96); }
 }
 
 
-/*  FAQ ----------------------------------- */
+/*=============================== FAQ ===============================*/
 
 .container_FAQ{
     display: flex;
@@ -1009,7 +991,7 @@ from{ filter: brightness(var(--brilho-escuro)); transform: scale(0.96); }
 .quadrado_info span{
     color: rgba(0,0,0,0.55);
 }
-/* Marketing -----------------------------------*/
+/*=============================== Marketing ===============================*/
 #marketing{
     display: flex;
     align-items: center;
@@ -1062,7 +1044,7 @@ from{ filter: brightness(var(--brilho-escuro)); transform: scale(0.96); }
     background-color: var(--dark-orange);
 }
 
-/* Footer -----------------------------------*/
+/*=============================== Footer ===============================*/
 
 #footer{
     display: flex;
@@ -1115,11 +1097,11 @@ a{
     color: black;
 }
 
-/*========================================MEDIA QUERY =========================================*/
+/*======================================== MEDIA QUERY =========================================*/
 
-/* Seção 1*/
+/*=============================== Seção 1 ===============================*/
 @media (min-width: 1024px) {
-    .hero{
+    #hero{
         min-height: 120vh;
     }
 }
@@ -1158,7 +1140,7 @@ a{
     }
 }
 
-/*Seção 3*/
+/*=============================== Seção 3 ===============================*/
 @media (min-width: 768px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
@@ -1187,7 +1169,7 @@ a{
     }
 }
 
-/*seção 5*/
+/*=============================== Seção 5 ===============================*/
 /* Tablet em diante: lado a lado */
 @media (min-width: 768px) {
   #container_secao5 {
@@ -1219,8 +1201,7 @@ a{
   }
 }
 
-/* ======================================== */
-/* ------------ MARKETING --------------------*/
+/*=============================== Marketing ===============================*/
 @media (max-width: 960px){
     #marketing .big_text{
         width: 94%;
@@ -1243,8 +1224,7 @@ a{
     }
 }
 
-/* ======================================== */
-/* ------------ FOOTER --------------------*/
+/*=============================== Footer ===============================*/
 @media (max-width: 1120px){
     #footer{
         align-self: center;
@@ -1309,7 +1289,7 @@ a{
     }
 
 }
-/*Media Query da seção 7 ==================================*/
+/*=============================== Seção 7 ===============================*/
 @media (min-width: 768px){
     #secao7{
         padding: 4.5rem 3rem 4rem;
@@ -1375,12 +1355,22 @@ a{
     }
 }
 
-
+/*=============================== Caso o usuário não queira muita animação, questão de acessibilidade ===============================*/
+/*Seção 7*/
 @media (prefers-reduced-motion: reduce){
     .slide_ativo .img_secao7 img,
     .slide_ativo .infos_secao7,
     .slide_ativo.saindo .img_secao7 img,
     .slide_ativo.saindo .infos_secao7{
         animation: none;
+    }
+}
+
+/*Scroll*/
+@media (prefers-reduced-motion: reduce){
+    .reveal{
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }

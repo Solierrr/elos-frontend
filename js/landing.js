@@ -1,22 +1,131 @@
-/*=============================== Barra de pesquisa na navbar ===============================*/
-const caixaPesquisa = document.getElementById('caixa_pesquisa');
+  /* ===================== SCROLL ANIMADO ===================== */
+(() => { // impede dar conflito com as demais variaveis
 
-function pesquisar() {
-  const pesquisa = caixaPesquisa.value.trim();
-  if (!pesquisa) return;
+  const reduzirMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const header = document.querySelector('header');
+  let animacaoScroll = null;
 
-  console.log('Pesquisando por:', pesquisa);
+  // começa devagar, acelera no meio e desacelera no final
+  const easeInOutCubic = (t) =>
+    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
-  caixaPesquisa.value = '';
-  caixaPesquisa.blur();
-}
-
-caixaPesquisa.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    e.preventDefault();
-    pesquisar();
+  // o header é fixo, precisa medir onde ele termina na tela
+  function offsetHeader() {
+    return header ? header.getBoundingClientRect().bottom + 16 : 0;
   }
-});
+
+  function scrollParaElemento(alvo) {
+    cancelAnimationFrame(animacaoScroll); //impede que aconteça conflitos, caso a pessoa aperte 2 scrolls diferentes
+
+    const inicioY = window.scrollY; //ponto de partida, quantos pixeis a tela já rodou
+    const destino = Math.max(0, inicioY + alvo.getBoundingClientRect().top - offsetHeader()); //onde a seção está na pagina inteira (- o header)
+    const distancia = destino - inicioY; //quantos pixels faltam scrollar, da posição atual até o destino.
+
+    //acessibilidade para quem não quer movimento
+    if (reduzirMovimento) {
+      window.scrollTo(0, destino);
+      return;
+    }
+
+    //duração da animação
+    const duracao = Math.min(Math.max(Math.abs(distancia) * 0.5, 800), 2000);
+    //abs tira o sinal negativo.
+    //max escolhe o maior dos dois, ou seja, não pode estar abaixo do número colocad, sendo o minimo.
+    //min escolhe o minimo dos dois, ou seja, não pode ultrapassar desse numero, sendo o máximo.
+
+    //variavel modificavel
+    let inicioTempo = null;
+    //para guardar o horario que a animação começou
+
+    //animação do scroll através dos quadros da tela para descobrir quanto tempo passou
+    function passo(agora) {
+      if (!inicioTempo) inicioTempo = agora;
+      const progresso = Math.min((agora - inicioTempo) / duracao, 1);
+      window.scrollTo(0, inicioY + distancia * easeInOutCubic(progresso));
+      if (progresso < 1) animacaoScroll = requestAnimationFrame(passo);
+    }
+    animacaoScroll = requestAnimationFrame(passo);
+  }
+
+  //se o usuário mexer no scroll durante a animação, ele assume o controle
+  ['wheel', 'touchstart', 'keydown'].forEach((evento) => {
+    //wheel = mouse, touchstart = clicar com o dedo, keydown = apertar uma tecla
+    window.addEventListener(evento, () => cancelAnimationFrame(animacaoScroll), { passive: true });
+    //passive: true avisa o navegador que essa função não bloqueia o scroll, então ele não precisa esperar ela terminar pra rolar a tela.
+  });
+
+
+  //^= começa com: procura todos os <a> cujo href começa com # (id de uma seção).
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href').slice(1);
+      const alvo = id && document.getElementById(id);
+      if (alvo) {
+        e.preventDefault();
+        scrollParaElemento(alvo);
+      }
+    });
+  });
+
+
+
+  //elementos que vao ser animados
+  const seletores = [
+    '.frase_secao1',                
+    '.frase_secao2',
+    '.informacao1_secao2',
+    '.informacao2_secao2',
+    '.informacao3_secao2',
+    '.grid-container > div',         
+    '.frase_secao5',
+    '#container_secao5 > img',
+    '.texto-secao6',
+    '.janela-secao6',
+    '.imagem-atuacao-secao6',
+    '.container_secao7 > h2',
+    '.frases_FAQ',
+    '.quadrado_info',                
+    '.title-marketing',
+    '#logo-container-footer',
+    '.grid-footer > div'
+  ];
+
+  
+  //marca os elementos com .reveal
+  const contagemPorPai = new Map();
+  document.querySelectorAll(seletores.join(',')).forEach((el) => {          //o join junta a lista seletores em um texto só, separado por ,
+    el.classList.add('reveal'); 
+    const i = contagemPorPai.get(el.parentElement) ?? 0;
+    el.style.setProperty('--i', i);
+    contagemPorPai.set(el.parentElement, i + 1);
+  });
+
+  //ve quais elementos saem e entram
+  const observer = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada) => {
+      if (!entrada.isIntersecting) return;
+
+      const el = entrada.target;    //elemento que entrou
+      el.classList.add('visivel');
+      observer.unobserve(el);   //anima só na primeira vez
+
+      //quando a animação termina, tira as classes e devolve o elemento ao normal
+      el.addEventListener('transitionend', function limpar(e) {
+        if (e.target !== el || e.propertyName !== 'opacity') return;
+        el.classList.remove('reveal', 'visivel');
+        el.style.removeProperty('--i');
+        el.removeEventListener('transitionend', limpar);
+      });
+    });
+  }, {
+    threshold: 0.1,     //só vai avisar quando pelo menos 10% do elemento estiver visivel
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  //entrega ao observer a lista de elementos
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+})();
 
 /*=============================== Carrosséis (seção 1 e 4) ===============================*/
 (function(){
@@ -144,70 +253,10 @@ caixaPesquisa.addEventListener('keydown', (e) => {
 
     // Um carrossel por seção
     criarCarrossel("#secao7", 10000);
-    criarCarrossel("#secao1", 7500, 2, 150);
-    criarCarrossel("#secao4", 7500, 2, 150);
+    criarCarrossel("#secao1", 8000, 2, 400);
+    criarCarrossel("#secao4", 8000, 2, 400);
 })();
-
-/*=============================== Seção 6 ===============================*/
-document.addEventListener('DOMContentLoaded', () => {
-    const janela = document.querySelector('.janela-secao6');
-    const caixas = document.querySelector('.caixas-secao6');
-    const ehMobile = window.matchMedia('(max-width: 780px)');
-
-    if (!janela || !caixas) {
-        console.error('Carrossel: elementos não encontrados');
-        return;
-    }
-
-    const originais = Array.from(caixas.children);
-    let ciclo = 0;
-
-    function clonarLista() {
-        return originais.map((el) => {
-            const c = el.cloneNode(true);
-            c.classList.add('clone');
-            c.setAttribute('aria-hidden', 'true');
-            return c;
-        });
-    }
-
-    function montar() {
-        caixas.querySelectorAll('.clone').forEach((c) => c.remove());
-        ciclo = 0;
-
-        if (!ehMobile.matches) {
-            janela.scrollTop = 0;
-            return;
-        }
-
-        clonarLista().forEach((c) => caixas.insertBefore(c, originais[0]));
-        clonarLista().forEach((c) => caixas.appendChild(c));
-
-        ciclo = caixas.scrollHeight / 3;
-        janela.scrollTop = ciclo;
-        console.log('Carrossel montado. ciclo =', ciclo, '| clones =', caixas.querySelectorAll('.clone').length);
-    }
-
-    janela.addEventListener('scroll', () => {
-        if (!ciclo) return;
-        if (janela.scrollTop < ciclo) {
-            janela.scrollTop += ciclo;
-        } else if (janela.scrollTop >= 2 * ciclo) {
-            janela.scrollTop -= ciclo;
-        }
-    }, { passive: true });
-
-    window.addEventListener('resize', () => {
-        if (!ehMobile.matches || !ciclo) return;
-        const proporcao = (janela.scrollTop - ciclo) / ciclo;
-        ciclo = caixas.scrollHeight / 3;
-        janela.scrollTop = ciclo + proporcao * ciclo;
-    });
-
-    montar();
-    ehMobile.addEventListener('change', montar);
-});
-
+/*=============================== Seção 2 ===============================*/
 
 /*=============================== Seção 7 =============================== */
 // Variaveis
