@@ -746,7 +746,7 @@ from{ filter: brightness(var(--brilho-escuro)); transform: scale(0.96); }
 #secao6 .lista li{
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 20px;
     font-size: clamp(1rem, 0.7rem + 0.8vw, 1.5rem);
 }
 
