@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Código de envio</title>
+    <link rel="shortcut icon" href="assets/icone/LOGO.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/text.css">
+    <link rel="stylesheet" href="style/variables.css">
+    <link rel="stylesheet" href="style/codigoEmail.css">
+
+</head>
+<body>
+    <div class = "containerP">
+        <header>
+            <a href="index.html">
+                <img src="assets/icone/Logo_com_nome.svg" alt="logo-elos" width="146" height="60">
+            </a>
+        </header>
+        <div class="container">
+            <div class="tela-redefinirSenha">
+                <div class="home">
+                    <a href="index.html">
+                        <img id="iconHome"src="assets/icone/home.svg" width="24" height="24">
+                    </a>
+                </div>
+                <p class="sub_title">Insira os dados!</p>
+                <p class="title">Digite o código que foi enviado!</p>
+      <form id="form" action="/enviar" method="POST">
+        <div class="form-group">
+          <input class="text-input" type="text" inputmode="numeric" required>
+          <input class="text-input" type="text" inputmode="numeric" required>
+          <input class="text-input" type="text" inputmode="numeric" required>
+          <input class="text-input" type="text" inputmode="numeric" required>
+          <input class="text-input" type="text" inputmode="numeric" required>
+        </div>
+        <span id="erro-codigo" class="span-erro"></span>
+        <div class="button-text-group">
+          <button id="botao" class="sub_title" type="submit">Proximo</button>
+          <p class="little_title">
+            <div class="sPPL">
+              <span class="color">Não recebeu email?</span>
+              <span id="enviar-email" class="link-cadastro">Reenviar email</span>
+              <input type="hidden" id="email">
+            </div>
+            <div class="sPPL">
+              <span class="color">Clicou errado?</span>
+              <a href="tela_login.html" class="link-cadastro">Voltar</a>
+            </div>
+          </p>
+        </div>
+      </form>
+                    </p>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <script type="module" src="js/codigoEsqueciSenha.js"></script>
+</body>
+</html>

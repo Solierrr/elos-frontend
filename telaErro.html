@@ -10,20 +10,23 @@
     <link rel="stylesheet" href="style/variables.css">
     <link rel="stylesheet" href="style/erro.css">
 </head>
-    <body>
+<body>
+    <header>
+        <img src="/assets/icone/Logo_com_nome_laranja.svg" alt="logo-elos" width="146" height="60">
+    </header>
     <div class="containerP">
-        <header>
-            <img src="/assets/icone/Logo_com_nome_laranja.svg" alt="logo-elos" width="146" height="60">
-        </header>
         <div class="container">
             <div class="containerTB">
                 <p class="big_text">Oops...</p>
                 <p class="title">Parece que algo deu <span class="destaque">errado!</span></p>
                 <p class="sub">A página que você está procurando não existe ou foi movida para outro endereço. Verifique o link ou volte para a página anterior para continuar navegando.</p>
-                <button class="sub_title">Voltar</button>
+                <button class="sub_title" id="voltar">Voltar</button>
             </div>
             <img src="/assets/imgs/Leao_dormindo_erro.png" width="1092" height="566" alt="Leão dormindo">
         </div>
     </div>
+
+    <script src="js/erro.js" defer></script>
+
 </body>
 </html>
