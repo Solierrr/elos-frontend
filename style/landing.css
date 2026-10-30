@@ -207,7 +207,7 @@ border: 1px solid #56564a;
 }
 
 
-/*===============================Frase do Hero ===============================*/
+/*=============================== Frase do Hero ===============================*/
 
 .destaque_hero{
     display: flex;
@@ -531,7 +531,17 @@ from{ filter: brightness(var(--brilho-escuro)); transform: scale(0.96); }
     border-radius: 0.6rem;
 }
 
-/* Seção 3 -------------------------*/
+#secao2 .informacoes{
+    row-gap: 0.8rem; /* espaço entre as barras, controlado num lugar só */
+}
+
+#secao2 .informacao_secao2{
+    display: flex;
+    justify-content: center; /* centraliza a barra */
+    padding-inline: 1rem;
+}
+
+/*=============================== Seção 3 ===============================*/
 
 #secao3{
     display: flex;
@@ -576,7 +586,7 @@ from{ filter: brightness(var(--brilho-escuro)); transform: scale(0.96); }
     background-position: center;
 }
 
-.card-imagem-secao3 p{
+.card-imagem-secao3 h2{
     color: var(--white);
 }
 
@@ -617,7 +627,7 @@ from{ filter: brightness(var(--brilho-escuro)); transform: scale(0.96); }
 }
 
 
-/*Seção 5 ----------------*/
+/*=============================== Seção 5 ===============================*/
 
 #secao5{
     background-color: var(--black);
@@ -973,24 +983,125 @@ from{ filter: brightness(var(--brilho-escuro)); transform: scale(0.96); }
     gap: 0.6rem;
     margin-top: 2.5rem;
     margin-bottom: 10rem;
+    width: 100%;
+    max-width: 40rem;
+    padding-inline: 1rem;
 }
 
 .quadrado_info{
     background-color: var(--grey);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
     border-radius: 1rem;
-    width: 42vw;
-    height: 10vh;
+    width: 100%;
+}
+
+.quadrado_info .acordeao_button{
     padding: 1rem;
     gap: 2rem;
+    min-height: 4.5rem;
 
 }
 .quadrado_info span{
     color: rgba(0,0,0,0.55);
 }
+
+/*=============================== Acordeão (seção 2 e FAQ) ===============================*/
+.acordeao_item{
+    width: 100%;
+    max-width: 40rem;
+    background-color: #E1E1E1;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+.acordeao_item.aberto{
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
+}
+
+/* O botão ocupa a barra inteira: o quadrado todo é clicável */
+.acordeao_button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.6rem 1.5rem;
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+.acordeao_button img{
+    flex-shrink: 0;
+}
+.acordeao_button .sub_title{
+    flex: 1;
+    text-align: center;
+}
+.acordeao_button:focus-visible{
+    outline: 2px solid var(--orange);
+    outline-offset: -2px;
+}
+
+/* A seta gira */
+.acordeao_button .icone_seta{
+    transition: transform 0.3s ease;
+}
+.acordeao_item.aberto .icone_seta{
+    transform: rotate(180deg);
+}
+
+/* A gaveta: a altura desliza de 0 até o tamanho do conteúdo */
+.acordeao_painel{
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition: grid-template-rows 0.4s ease, visibility 0s linear 0.4s;
+}
+.acordeao_item.aberto .acordeao_painel{
+    grid-template-rows: 1fr;
+    visibility: visible;
+    transition: grid-template-rows 0.4s ease, visibility 0s;
+}
+.acordeao_conteudo{
+    overflow: hidden;
+    min-height: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.acordeao_item.aberto .acordeao_conteudo{
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
+/* Espaçamento do conteúdo (parágrafos e listas) */
+.acordeao_conteudo p{
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.acordeao_conteudo > *{
+    margin: 0 0 0.6rem;
+    padding-inline: 1.5rem;
+}
+.acordeao_conteudo > ul{
+    padding-inline-start: 2.75rem; /* espaço pras bolinhas e números */
+}
+.acordeao_conteudo > :last-child{
+    margin-bottom: 1rem;
+}
+
+.acordeao_conteudo{
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--black) 75%, transparent);
+}
+.quadrado_info .acordeao_button{
+    padding: 1rem;
+    gap: clamp(0.75rem, 3vw, 0.75rem);
+    min-height: 4.5rem;
+}
+
+
 /*=============================== Marketing ===============================*/
 #marketing{
     display: flex;
@@ -1099,7 +1210,7 @@ a{
 
 /*======================================== MEDIA QUERY =========================================*/
 
-/*=============================== Seção 1 ===============================*/
+            /*=============================== Seção 1 ===============================*/
 @media (min-width: 1024px) {
     #hero{
         min-height: 120vh;
@@ -1371,6 +1482,15 @@ a{
     .reveal{
         opacity: 1;
         transform: none;
+        transition: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .acordeao_item,
+    .acordeao_painel,
+    .acordeao_conteudo,
+    .acordeao_button .icone_seta{
         transition: none;
     }
 }

@@ -46,10 +46,10 @@
         </header>
         <div class = "destaque_hero">
             <div class =  "frase_hero">
-                <p class = "big_text">Um elo entre</p>
-                    <p class = "big_text espacamento">comprador e fornecedor</p>
-                <p class = "sub_title">A intermediação entre empresas e setores fotovoltaicos,</p>
-                <p class = "sub_title"> com a solução adequada a cada escala</p>
+                <h2 class = "big_text">Um elo entre</h2>
+                    <h2 class = "big_text espacamento">comprador e fornecedor</h2>
+                <h3 class = "sub_title">A intermediação entre empresas e setores fotovoltaicos,</h3>
+                <h3 class = "sub_title"> com a solução adequada a cada escala</h3>
 
             </div>
                 <button class = "button_saiba" type="button" aria-label = "Saiba mais sobre a empresa">
@@ -64,38 +64,38 @@
 
     <section id = "secao1">
         <div class = "frase_secao1">
-        <p class = "big_text">Explore nossos objetivos!</p>
+        <h2 class = "big_text">Explore nossos objetivos!</h2>
         </div>
         <div class = "carrossel">
             <div class = "busca_G slide_ativo">
                 <img src="assets/img/busca_geografica.jpg" alt = "Uma busca geográfica." class = "img_BG">
                 <div class = "infos_carrossel">
-                    <p class = "sub_title">Busca Geográfica</p>
-                    <p class = "text"> Encontre empresas e técnicas especializadas em instalação de painéis solares na sua região.</p>
+                    <h3 class = "sub_title">Busca Geográfica</h3>
+                    <h4 class = "text"> Encontre empresas e técnicas especializadas em instalação de painéis solares na sua região.</h4>
                 </div>
             </div>
 
             <div class = "divulgacao slide">
                 <img src = "assets/img/divulgacao.jpg" alt = "Um homem pesquisando sobre divulgação de produtos." class = "img_D">
                 <div class = "infos_carrossel">
-                    <p class = "sub_title">Divulgação</p>
-                    <p class = "text">Conheça publicações sobre empresas técnicas, perfis de profissionais e outras informações relevantes do setor.</p>
+                    <h3 class = "sub_title">Divulgação</h3>
+                    <h4 class = "text">Conheça publicações sobre empresas técnicas, perfis de profissionais e outras informações relevantes do setor.</h4>
                 </div>
             </div>
 
             <div class = "comunicacao slide">
                 <img src = "assets/img/comunicacao.jpg" alt = "Pessoas se comunicando." class = "img_C">
                 <div class = "infos_carrossel">
-                    <p class = "sub_title">Comunicação</p>
-                    <p class = "text">Utilize o nosso chat para conversar diretamente com fornecedores e técnicos.</p>
+                    <h3 class = "sub_title">Comunicação</h3>
+                    <h4 class = "text">Utilize o nosso chat para conversar diretamente com fornecedores e técnicos.</h4>
                 </div>
             </div>
 
             <div class = "oportunidades slide">
                 <img src = "assets/img/oportunidades.jpg" alt = "Oportunidades de negócio, sendo mostrada com uma chave e dinheiro ao fundo." class = "img_O">
                 <div class = "infos_carrossel">
-                    <p class = "sub_title">Oportunidades</p>
-                    <p class = "text">Descubra as melhores condições e ofertas para instalação de painéis solares oferecidas por empresas técnicas.</p>
+                    <h3 class = "sub_title">Oportunidades</h3>
+                    <h4 class = "text">Descubra as melhores condições e ofertas para instalação de painéis solares oferecidas por empresas técnicas.</h4>
                 </div>
             </div>
         </div>
@@ -111,47 +111,118 @@
         <div class = "informacoes">
 
             <div class = "frase_secao2">
-                <p class = "big_text">Conheça mais sobre nós!</p>
-            <p class = "title"><span class = "accent">Benefícios</span> que o Elos trará a você</p>
+                <h2 class = "big_text">Conheça mais sobre nós!</h2>
+            <h3 class = "title"><span class = "accent">Benefícios</span> que o Elos trará a você</h3>
         </div>
 
-        <div class = "informacao1_secao2">
-            <div class = "instalacao">
+        <div class = "informacao_secao2">
+            <div class = "acordeao_item">
+                <button class = "acordeao_button" type ="button" id="btn_instalacao" aria-controle="resp-instalacao">               
                 <img src = "assets/icone/engrenagem.svg" alt = "Ícone de engrenagem" class = "icone_engrenagem">
-                <p class = "sub_title">Instalação em múltiplas filais</p>
-                <img src = "assets/icone/setaPBaixo.svg" alt = "Ícone de seta" class = "icone_seta">
+                <span class = "sub_title">Instalação em múltiplas filais</span>
+                <img src = "assets/icone/setaPBaixo.svg" alt = "Ícone de seta" class = "icone_seta"></button>
+                <div class = "acordeao_painel" id = "resp_instalacao" role = "region" aria-labelledby="btn-instalacao">
+                    <div class ="acordeao_conteudo">
+                        <p class = "text">Faça a instalação e gerenciamento individual de cada filial.</p>
+                        <p class = "text">Funcionalidades:</p>
+                        <ul>
+                            <li class = "text">
+                                Localização;
+                            </li>
+                            <li class = "text">
+                                Tipo de instalação;
+                            </li>
+                            <li class = "text">
+                                Histórico de informações do local;
+                            </li>
+                            <li class = "text">
+                                Registros fotográficos;
+                            </li>
+                            <li class = "text">
+                                Atualizações ao longo do tempo.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
-               <div class = "informacao2_secao2">
-            <div class = "tecnicos">
+        <div class = "informacao_secao2">
+            <div class = "acordeao_item">
+                <button class = "acordeao_button" type ="button" id="btn_tecnicos" aria-controle="resp_tecnicos">               
                 <img src = "assets/icone/pessoas.svg" alt = "Ícone de pessoas" class = "icone_pessoas">
-                <p class = "sub_title">Técnicos especializados</p>
-                <img src = "assets/icone/setaPBaixo.svg" alt = "Ícone de seta" class = "icone_seta">
+                <span class = "sub_title">Técnicos especializados</span>
+                <img src = "assets/icone/setaPBaixo.svg" alt = "Ícone de seta" class = "icone_seta"></button>
+                <div class = "acordeao_painel" id = "resp_tecnicos" role = "region" aria-labelledby="btn_tecnicos">
+                    <div class = "acordeao_conteudo">
+                        <p class = "text">A plataforma terá os registros de qualificações e credenciais profissionais  que são submetidas a processos de validação documental.</p>
+                        <p class = "text">Esses registros poderão incluir:</p>
+                        <ul>
+                            <li class = "text">
+                                Formação profissional;
+                            </li>
+                            <li class = "text">
+                                Registros em conselhos profissionais;
+                            </li>
+                            <li class = "text">
+                                Certificações;
+                            </li>
+                            <li class = "text">
+                                Documentações comprobatórias.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class = "informacao3_secao2">
-            <div class = "ofertas">
+
+        <div class = "informacao_secao2">
+            <div class = "acordeao_item">
+                <button class = "acordeao_button" type ="button" id="btn_ofertas" aria-controle="resp_ofertas">               
                 <img src = "assets/icone/carrinho.svg" alt = "Ícone de carrinho" class = "icone_carrinho">
-                <p class = "sub_title">Ofertas únicas</p>
-                <img src = "assets/icone/setaPBaixo.svg" alt = "Ícone de seta" class = "icone_seta">
+                <span class = "sub_title">Ofertas únicas</span>
+                <img src = "assets/icone/setaPBaixo.svg" alt = "Ícone de seta" class = "icone_seta"></button>
+                <div class = "acordeao_painel" id = "resp_ofertas" role = "region" aria-labelledby="btn_ofertas">
+                    <div class ="acordeao_conteudo">
+                        <p class = "text">Divulge e explore produtos e ofertas dentro da plataforma.</p>
+                        <p class = "text">Funcionalidades:</p>
+                        <ul>
+                            <li class = "text">
+                                Cadastro de modelos de equipamentos;
+                            </li>
+                            <li class = "text">
+                                Controle de disponibilidade;
+                            </li>
+                            <li class = "text">
+                                Publicação de ofertas;
+                            </li>
+                            <li class = "text">
+                                Consulta de produtos por empresas interessadas;
+                            </li>
+                            <li class = "text">
+                                Negociação entre fornecedores e demandantes.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+
     </section>
+
 
     <section id="secao3">
         <div class="grid-container">
             <div>
                 <div class="card-imagem-secao3" id="gerenciamento-secao3">
-                    <p class="title">Gerenciamento</p></div>
+                    <h2 class="title">Gerenciamento</h2></div>
                 <div class="card-texto-secao3">
                     <p class="text">Gerencie, de forma centralizada, todas as unidades e demandas da sua empresa com controle e agilidade.</p>
                 </div>
             </div>
             <div>
                 <div class="card-imagem-secao3" id="servicos-secao3">
-                    <p class="title">Serviços técnicos</p>
+                    <h2 class="title">Serviços técnicos</h2>
                 </div>
                 <div class="card-texto-secao3">
                     <p class="text">Solicite serviços técnicos especializados a profissionais qualificados do setor fotovoltaico, com rapidez e segurança.</p>
@@ -159,7 +230,7 @@
             </div>
             <div>
                 <div class="card-imagem-secao3" id="catalogo-secao3">
-                    <p class="title">Catálogo</p>
+                    <h2 class="title">Catálogo</h2>
                 </div>
                 <div class="card-texto-secao3">
                     <p class="text">Consulte produtos e ofertas de fornecedores especializados do setor fotovoltaico, com praticidade e agilidade.</p>
@@ -170,38 +241,38 @@
     
     <section id = "secao4">
         <div class = "frase_secao1">
-            <p class = "title">Transforme sua <span class = "accent">economia</span> com energia solar!</p>
+            <h2 class = "title">Transforme sua <span class = "accent">economia</span> com energia solar!</h2>
         </div>
         <div class = "carrossel">
             <div class = "vida_util slide_ativo">
                 <img src="assets/img/vida_util.jpg" alt = "Foto de painéis solares." class = "img_carrossel">
                 <div class = "infos_carrossel">
-                    <p class = "sub_title">Vida útil</p>
-                    <p class = "text">Conte com painéis solares que possuem vida útil média de aproximadamente trinta anos.</p>
+                    <h3 class = "sub_title">Vida útil</h3>
+                    <h4 class = "text">Conte com painéis solares que possuem vida útil média de aproximadamente trinta anos.</h4>
                 </div>
             </div>
 
             <div class = "payback slide">
                 <img src = "assets/img/payback.jpg" alt = "Imagem de uma pessoa guardando dinheiro" class = "img_carrossel">
                 <div class = "infos_carrossel">
-                    <p class = "sub_title">Payback</p>
-                    <p class = "text">Obtenha retorno financeiro em prazo determinado, calculado a partir da instalação do painel solar.</p>
+                    <h3 class = "sub_title">Payback</h3>
+                    <h4 class = "text">Obtenha retorno financeiro em prazo determinado, calculado a partir da instalação do painel solar.</h4>
                 </div>
             </div>
 
             <div class = "sustentavel slide">
                 <img src = "assets/img/sustentavel.jpg" alt = "Pessoas andando por uma paisagem florida." class = "img_carrossel">
                 <div class = "infos_carrossel">
-                    <p class = "sub_title">Sustentável</p>
-                    <p class = "text">Promova o uso equilibrado e responsável dos recursos naturais.</p>
+                    <h3 class = "sub_title">Sustentável</h3>
+                    <h4 class = "text">Promova o uso equilibrado e responsável dos recursos naturais.</h4>
                 </div>
             </div>
 
             <div class = "renovavel slide">
                 <img src = "assets/img/renovavel.jpg" alt = "Fotos de painéis fotovoltaicos, que são um tipo de energia renovável" class = "img_O">
                 <div class = "infos_carrossel">
-                    <p class = "sub_title">Renovável</p>
-                    <p class = "text">Utilize energia solar, uma fonte capaz de se regenerar naturalmente.</p>
+                    <h3 class = "sub_title">Renovável</h3>
+                    <h4 class = "text">Utilize energia solar, uma fonte capaz de se regenerar naturalmente.</>
                 </div>
             </div>
         </div>
@@ -217,12 +288,12 @@
         <div id = "container_secao5">
             <img src = "assets/img/img_secao5.jpg">
             <div class = "frase_secao5">
-                <p class = "title">Como a energia solar muda a sua vida</p>
+                <h2 class = "title">Como a energia solar muda a sua vida</h2>
                 <div class = "titulo_secao5">
-                <p class = "text">
+                <h3 class = "text">
                         Em 2023, um sistema fotovoltaico em Franca (SP) com 220 painéis reduziu o gasto mensal de energia de <span class = "accent_white">R$6.500,00</span> para <span class = "accent_white">R$1.600,00.</span>
-                    </p>
-                    <p class = "text">Gerando economia de <span class = "accent_white">R$4.900,00</span> por mês e retorno do investimento em cerca de <span class = "accent_white">8,5</span> anos.</p>
+                    </h3>
+                    <h3 class = "text">Gerando economia de <span class = "accent_white">R$4.900,00</span> por mês e retorno do investimento em cerca de <span class = "accent_white">8,5</span> anos.</h3>
                     <p class = "little_text">Observação: valores baseados no <span class = "accent_white">caso específico</span>; o retorno pode variar conforme tarifa e perfil de consumo de cada cliente.</p>
                 </div>
             </div>
@@ -232,10 +303,10 @@
     <section id="secao6">
         <div>
             <div class="texto-secao6">
-                <p class="big_text">Agora também temos <span class="accent">fornecedores!</span></p>
+                <h2 class="big_text">Agora também temos <span class="accent">fornecedores!</span></h2>
                 <div>
-                    <p class="sub_title">Ampliamos nossa atuação para gerar ainda mais valor</p>
-                    <p class="text">Nosso aplicativo abrange:</p>
+                    <h3 class="sub_title">Ampliamos nossa atuação para gerar ainda mais valor</h3>
+                    <h4 class="text">Nosso aplicativo abrange:</h4>
                 </div>
             </div>
             <div class="atuacoes-fornecedores-secao6">
@@ -387,45 +458,89 @@
                 <h2 class = "title">Perguntas frequentes</h2>
                 <h3 class = "sub_title">Tem perguntas? Nos contate.</h3>
             </div>
-        <a href="mailto:interdisciplinar.elos@gmail.com">
-            <button class = "button_contate_nos" type = "button" arial-label = "Contate-nos">
-                <span class = "text">Contate-nos</span>
-            </button>
+
+        <a class="button_contate_nos" href="mailto:interdisciplinar.elos@gmail.com">
+            <span class="text">Contate-nos</span>
         </a>
 
             <div class = "container_infos">
 
-
-                    <div class = "quadrado_info">
+                <div class = "quadrado_info acordeao_item">
+                    <button class = "acordeao_button" type = "button" id = "btn_faq_1" aria-expanded="false" aria-controle="resp_faq_1">
                         <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
                         <span class = "sub_title">O que é o Elos?</span>
                         <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
+                    </button>
+                        <div class = "acordeao_painel" id="resp_faq_1" role="region" aria-labelledby="btn-faq-1">
+                            <div class="acordeao_conteudo">
+                                <p class = "text">Elos é uma plataforma B2B que faz um elo entre o comprador e o fornecedor  com o objetivo de realizar as suas compras com facilidade e praticidade.</p>
+                                <p></p>
+                            </div>
+                        </div>
                     </div>
 
-                <div class = "quadrado_info">
-                    <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
-                    <span class = "sub_title">Como é o processo de instalação?</span>
-                    <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
-                </div>
+                <div class = "quadrado_info acordeao_item">
+                    <button class = "acordeao_button" type = "button" id = "btn_faq_2" aria-expanded="false" aria-controle="resp_faq_2">
+                        <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
+                        <span class = "sub_title">Como é o processo de instalação?</span>
+                        <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
+                    </button>
+                        <div class = "acordeao_painel" id="resp_faq_2" role="region" aria-labelledby="btn-faq_2">
+                            <div class="acordeao_conteudo">
+                                <p class = "text">O processo de instalação possui diversas etapas, sendo elas:
+                                Verificação se é possível a instalação no local;
+                                Aprovação da concessionária responsável pela energia da região;
+                                Instalação dos painéis solares;
+                                Conexão com o sistema elétrico.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class = "quadrado_info">
-                    <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
-                    <span class = "sub_title">Quais são os tipos de placas solares?</span>
-                    <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
-                </div>
-
-                <div class = "quadrado_info">
-                    <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
-                    <span class = "sub_title">A manutenção tem que ser frequente?</span>
-                    <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
-                </div>
-
-                <div class = "quadrado_info">
-                    <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
-                    <span class = "sub_title">O que o Elos não faz?</span>
-                    <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
-                </div>
-
+                
+                <div class = "quadrado_info acordeao_item">
+                    <button class = "acordeao_button" type = "button" id = "btn_faq_3" aria-expanded="false" aria-controle="resp_faq_3">
+                        <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
+                        <span class = "sub_title">Quais são os tipos de placas solares?</span>
+                        <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
+                    </button>
+                        <div class = "acordeao_painel" id="resp_faq_3" role="region" aria-labelledby="btn-faq_3">
+                            <div class="acordeao_conteudo">
+                                <p class = "text">Sim, existe mais um tipo de placa solar com diferentes potências, preços, materiais de fabricação, resistência, benefícios e desvantagens.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                <div class = "quadrado_info acordeao_item">
+                    <button class = "acordeao_button" type = "button" id = "btn_faq_4" aria-expanded="false" aria-controle="resp_faq_4">
+                        <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
+                        <span class = "sub_title">A manutenção tem que ser frequente?</span>
+                        <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
+                    </button>
+                        <div class = "acordeao_painel" id="resp_faq_4" role="region" aria-labelledby="btn-faq_4">
+                            <div class="acordeao_conteudo">
+                                <p class = "text">A manutenção da placa não precisa ser frequente, porém é necessário verificar, ao menos, uma vez por semana.
+                                Isso garante o funcionamento máximo do painel solar gerando mais payback.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class = "quadrado_info acordeao_item">
+                    <button class = "acordeao_button" type = "button" id = "btn_faq_5" aria-expanded="false" aria-controle="resp_faq_5">
+                        <img src = "assets/icone/pergunta.svg" alt = "Icone de pergunta">
+                        <span class = "sub_title">O que o Elos não faz?</span>
+                        <img src = "assets/icone/seta_menor.svg" alt = "Icone de seta">
+                    </button>
+                        <div class = "acordeao_painel" id="resp_faq_5" role="region" aria-labelledby="btn-faq_5">
+                            <div class="acordeao_conteudo">
+                                <p class = "text">
+                                    O Elos não faz a venda direta de equipamentos pela plataforma e pelo aplicativo;
+                                    Não fornece para o público residencial;
+                                    Não há o monitoramento de hardware;
+                                    Não possui o controle operacional de sistemas fotovoltaicos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>
