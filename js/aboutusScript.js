@@ -43,6 +43,36 @@ const botaoSwitchMensalidade  = document.getElementById("alternarPeriodo");
 const textoPeriodo = document.getElementById("texto-mensalidade");
 const itensDoPeriodo = document.querySelectorAll("[data-mensal]");
 
+function animarCardsSecao3() {
+    const card = document.getElementById(idCardAtivo);
+
+    if (!card || card.hidden) return;
+
+    // Seleciona o card e todos os elementos animados dentro dele
+    const elementos = [
+        card,
+        ...card.querySelectorAll('.reveal')
+    ];
+
+    // Primeiro, retira a classe que deixa os elementos visíveis
+    elementos.forEach(function (elemento) {
+        elemento.classList.remove('visivel');
+    });
+
+    // Espera o navegador registrar o estado inicial
+    requestAnimationFrame(function () {
+
+        // Espera mais um quadro antes de iniciar a animação
+        requestAnimationFrame(function () {
+
+            elementos.forEach(function (elemento) {
+                elemento.classList.add('visivel');
+            });
+
+        });
+    });
+}
+
 function mostrarCard(plano) {
     idCardAtivo = "card-" + plano;
 
@@ -54,13 +84,8 @@ function mostrarCard(plano) {
         }
     });
 
-    requestAnimationFrame(function () {
-        const cardAtivo = document.getElementById(idCardAtivo);
+    animarCardsSecao3();
 
-        cardAtivo.querySelectorAll('.reveal').forEach(function (elemento) {
-            reiniciarAnimacao(elemento);
-        });
-    });
 }
 
 botoesPlano.forEach(function (botao) {
@@ -68,10 +93,6 @@ botoesPlano.forEach(function (botao) {
 
         mostrarCard(botao.dataset.plano);
         marcarBotaoAtivo(botao.dataset.plano);
-
-        requestAnimationFrame(function () {
-            reiniciarAnimacoesSecao3();
-        });
     });
 });
 
@@ -117,6 +138,7 @@ botaoSwitchMensalidade.addEventListener("click", function () {
     }
 
     animarCardsSecao3();
+ 
 });
 
 //SEÇÃO 4 =-=-=-=-=-=-=-=---=-=-=-=-=-=-
@@ -260,8 +282,10 @@ atualizarPilha();
         '#card-fornecedor, #card-profissional, #card-cliente',
         '.coluna-principal > h3',
         '.coluna-principal > p',
-        'ul > li',
-        'coluna-faixas > p',
+        '.coluna-principal > ul > li',
+        '.coluna-faixas > ul > li',
+        '.plano-profissional > ul > li',
+        '.coluna-faixas > p',
         '.grid-container > div',         
         '.title-marketing',
         '.button-cadastre-se',
@@ -294,40 +318,18 @@ atualizarPilha();
         rootMargin: '0px 0px -50px 0px'
     });
 
-    function reiniciarAnimacao(elemento) {
+    document.querySelectorAll('.reveal').forEach((el) => {
+            // Não entrega os cards da seção 3 ao observer.
+        // Eles serão animados manualmente.
+        if (el.closest('#card-fornecedor, #card-profissional, #card-cliente')) {
+            return;
+        }
 
-        elemento.classList.remove('visivel');
-
-        // Garante que o navegador registre o estado inicial
-        void elemento.offsetWidth;
-
-        elemento.classList.add('visivel');
-    }
-
-    //entrega ao observer a lista de elementos
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-    function animarCardsSecao3() {
-        const cards = document.querySelectorAll(
-            '#card-fornecedor, #card-profissional, #card-cliente'
-        );
-
-        cards.forEach(function (card) {
-            if (!card.hidden) {
-                reiniciarAnimacao(card);
-
-                card.querySelectorAll(
-                    '.coluna-principal > h3, ' +
-                    '.coluna-principal > p, ' +
-                    '.coluna-principal > ul > li, ' +
-                    '.coluna-faixas > p',
-                    '.coluna-faixas > ul > li'
-                ).forEach(function (elemento) {
-                    reiniciarAnimacao(elemento);
-                });
-            }
-        });
-    }
-
+        observer.observe(el);
+    });
 
 })();
+
+mostrarCard("fornecedor");
+marcarBotaoAtivo("fornecedor");
+aplicarPeriodo("mensal");
