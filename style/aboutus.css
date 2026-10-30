@@ -8,6 +8,32 @@ body{
     background-color: var(--light-grey);
 }
 
+/*=============================== Animação de de scroll ===============================*/
+.reveal{
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    /* cada item espera um pouco mais que o anterior (máx. 0.9s) */
+    transition-delay: min(calc(var(--i, 0) * 150ms), 900ms);
+    will-change: opacity, transform;
+}
+
+.reveal.visivel{
+    opacity: 1;
+    transform: none;
+}
+
+/*Scroll*/
+@media (prefers-reduced-motion: reduce){
+    .reveal{
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 /* Classes e especificações gerais */
 [hidden] {
     display: none !important;

@@ -47,11 +47,19 @@ function mostrarCard(plano) {
     idCardAtivo = "card-" + plano;
 
     cardsS3.forEach(function (card) {
-        if (idCardAtivo === card.id){
+        if (idCardAtivo === card.id) {
             card.hidden = false;
         } else {
             card.hidden = true;
         }
+    });
+
+    requestAnimationFrame(function () {
+        const cardAtivo = document.getElementById(idCardAtivo);
+
+        cardAtivo.querySelectorAll('.reveal').forEach(function (elemento) {
+            reiniciarAnimacao(elemento);
+        });
     });
 }
 
@@ -60,6 +68,10 @@ botoesPlano.forEach(function (botao) {
 
         mostrarCard(botao.dataset.plano);
         marcarBotaoAtivo(botao.dataset.plano);
+
+        requestAnimationFrame(function () {
+            reiniciarAnimacoesSecao3();
+        });
     });
 });
 
@@ -103,6 +115,8 @@ botaoSwitchMensalidade.addEventListener("click", function () {
     } else {
         aplicarPeriodo("anual");
     }
+
+    animarCardsSecao3();
 });
 
 //SEÇÃO 4 =-=-=-=-=-=-=-=---=-=-=-=-=-=-
@@ -161,3 +175,159 @@ gridDiferenciais.addEventListener('click', irParaProximo);
 mqPilha.addEventListener('change', atualizarPilha);
  
 atualizarPilha();
+
+/* ===================== SCROLL ANIMADO ===================== */
+(() => { // impede dar conflito com as demais variaveis
+
+    const reduzirMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const header = document.querySelector('header');
+    let animacaoScroll = null;
+
+    // começa devagar, acelera no meio e desacelera no final
+    const easeInOutCubic = (t) =>
+        t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    // o header é fixo, precisa medir onde ele termina na tela
+    function offsetHeader() {
+        return header ? header.getBoundingClientRect().bottom + 16 : 0;
+    }
+
+    function scrollParaElemento(alvo) {
+        cancelAnimationFrame(animacaoScroll); //impede que aconteça conflitos, caso a pessoa aperte 2 scrolls diferentes
+
+        const inicioY = window.scrollY; //ponto de partida, quantos pixeis a tela já rodou
+        const destino = Math.max(0, inicioY + alvo.getBoundingClientRect().top - offsetHeader()); //onde a seção está na pagina inteira (- o header)
+        const distancia = destino - inicioY; //quantos pixels faltam scrollar, da posição atual até o destino.
+
+        //acessibilidade para quem não quer movimento
+        if (reduzirMovimento) {
+        window.scrollTo(0, destino);
+        return;
+        }
+
+        //duração da animação
+        const duracao = Math.min(Math.max(Math.abs(distancia) * 0.5, 800), 2000);
+        //abs tira o sinal negativo.
+        //max escolhe o maior dos dois, ou seja, não pode estar abaixo do número colocad, sendo o minimo.
+        //min escolhe o minimo dos dois, ou seja, não pode ultrapassar desse numero, sendo o máximo.
+
+        //variavel modificavel
+        let inicioTempo = null;
+        //para guardar o horario que a animação começou
+
+        //animação do scroll através dos quadros da tela para descobrir quanto tempo passou
+        function passo(agora) {
+        if (!inicioTempo) inicioTempo = agora;
+        const progresso = Math.min((agora - inicioTempo) / duracao, 1);
+        window.scrollTo(0, inicioY + distancia * easeInOutCubic(progresso));
+        if (progresso < 1) animacaoScroll = requestAnimationFrame(passo);
+        }
+        animacaoScroll = requestAnimationFrame(passo);
+    }
+
+    //se o usuário mexer no scroll durante a animação, ele assume o controle
+    ['wheel', 'touchstart', 'keydown'].forEach((evento) => {
+        //wheel = mouse, touchstart = clicar com o dedo, keydown = apertar uma tecla
+        window.addEventListener(evento, () => cancelAnimationFrame(animacaoScroll), { passive: true });
+        //passive: true avisa o navegador que essa função não bloqueia o scroll, então ele não precisa esperar ela terminar pra rolar a tela.
+    });
+
+
+    //^= começa com: procura todos os <a> cujo href começa com # (id de uma seção).
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', (e) => {
+        const id = link.getAttribute('href').slice(1);
+        const alvo = id && document.getElementById(id);
+        if (alvo) {
+            e.preventDefault();
+            scrollParaElemento(alvo);
+        }
+        });
+  });
+
+
+
+    //elementos que vao ser animados
+    const seletores = [
+        '.fraseHero > h1',
+        '.fraseHero > p',
+        '.texto-secao1',
+        '.desc-secao1 > div > h2',
+        '.desc-secao1 > img',
+        '.secoes-title',
+        '.possibilidades-secao2',
+        '.botoes-secao3',
+        '#card-fornecedor, #card-profissional, #card-cliente',
+        '.coluna-principal > h3',
+        '.coluna-principal > p',
+        'ul > li',
+        'coluna-faixas > p',
+        '.grid-container > div',         
+        '.title-marketing',
+        '.button-cadastre-se',
+        '#logo-container-footer',
+        '.grid-footer > div'
+    ];
+
+  
+    //marca os elementos com .reveal
+    const contagemPorPai = new Map();
+    document.querySelectorAll(seletores.join(',')).forEach((el) => {          //o join junta a lista seletores em um texto só, separado por ,
+        el.classList.add('reveal'); 
+        const i = contagemPorPai.get(el.parentElement) ?? 0;
+        el.style.setProperty('--i', i);
+        contagemPorPai.set(el.parentElement, i + 1);
+    });
+
+    //ve quais elementos saem e entram
+    const observer = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+        if (!entrada.isIntersecting) return;
+
+        const el = entrada.target;    //elemento que entrou
+        el.classList.add('visivel');
+        observer.unobserve(el);   //anima só na primeira vez
+
+        });
+    }, {
+        threshold: 0.1,     //só vai avisar quando pelo menos 10% do elemento estiver visivel
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    function reiniciarAnimacao(elemento) {
+
+        elemento.classList.remove('visivel');
+
+        // Garante que o navegador registre o estado inicial
+        void elemento.offsetWidth;
+
+        elemento.classList.add('visivel');
+    }
+
+    //entrega ao observer a lista de elementos
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    function animarCardsSecao3() {
+        const cards = document.querySelectorAll(
+            '#card-fornecedor, #card-profissional, #card-cliente'
+        );
+
+        cards.forEach(function (card) {
+            if (!card.hidden) {
+                reiniciarAnimacao(card);
+
+                card.querySelectorAll(
+                    '.coluna-principal > h3, ' +
+                    '.coluna-principal > p, ' +
+                    '.coluna-principal > ul > li, ' +
+                    '.coluna-faixas > p',
+                    '.coluna-faixas > ul > li'
+                ).forEach(function (elemento) {
+                    reiniciarAnimacao(elemento);
+                });
+            }
+        });
+    }
+
+
+})();
