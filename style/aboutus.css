@@ -73,6 +73,7 @@ body{
     align-items: center;
 
     padding: 1.5rem 1rem 2rem;
+    overflow: hidden;
 }
 
 #hero::before{
@@ -256,13 +257,13 @@ body{
 
 /*Divisão */
 #divisaoArco{
+    display: block;
     fill: var(--light-grey);
     width: 100%;
-    height: 15vh;
-
-    bottom: -1px;
+    height: 5rem;
 
     position: absolute;
+    bottom: -1px;
     left: 0;
     z-index: 10;
 } 
@@ -270,8 +271,9 @@ body{
 /* Seção 1 -----------------------------------*/
 
 #secao1 {
-    align-items: center;
-    justify-content: center;
+    background-color: var(--light-grey);
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .container-secao1{
